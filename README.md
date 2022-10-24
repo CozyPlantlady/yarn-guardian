@@ -30,9 +30,14 @@ User can use this app to write upp information of all the yarns and other suppli
 
 
 ## Structure
-![](doc/readme-images/site-structure.png "")
-### Site Structure
 
+### Site Structure
+![](doc/readme-images/site-structure.png "")
+
+
+### Data Structure
+
+![](doc/readme-images/drawSQL-table.png "")
 
 ## Skeleton:
 
