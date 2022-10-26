@@ -10,4 +10,4 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 
 db = SQLAlchemy(app)
 
-from yarn_guardian import routes
+from yarn_guardian import *
