@@ -1,0 +1,1 @@
+web: gunicorn yarn_guardian.wsgi
