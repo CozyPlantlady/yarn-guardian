@@ -4,8 +4,8 @@ from cloudinary.models import CloudinaryField
 
 
 class Producer(models.Model):
-    producer = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, null=False, blank=False)
     body = models.TextField()
 
     def __str__(self):
-        return self.producer
+        return self.name

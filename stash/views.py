@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.views import generic
+from .models import Producer
 
 
-# Create your views here.
 def testing(request):
     return render(request, 'stash/stash_board.html')
