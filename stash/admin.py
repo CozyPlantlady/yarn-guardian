@@ -1,4 +1,9 @@
 from django.contrib import admin
 from .models import Producer
+from django_summernote.admin import SummernoteModelAdmin
 
-admin.site.register(Producer)
+
+@admin.register(Producer)
+class PostAdmin(SummernoteModelAdmin):
+
+    summernote_fields = ('body')
