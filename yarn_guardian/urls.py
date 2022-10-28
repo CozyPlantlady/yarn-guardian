@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from stash.views import testing
+from stash.views import get_stash
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', testing, name='testing'),
+    path('', get_stash, name='get_stash'),
     path('summernote/', include('django_summernote.urls')),
 ]

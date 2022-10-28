@@ -8,5 +8,14 @@
 </head>
 <body>
     <h1>My stash</h1>
+
+    <table>
+        {% for yarn in yarns %}
+            <tr>
+                <td>{{ yarn.name }}</td>
+                <td>{{ yarn.producer }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
