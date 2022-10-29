@@ -8,4 +8,5 @@ def get_stash(request):
     context = {
         'yarns': yarns
     }
+    paginate_by = 12
     return render(request, 'stash/stash_board.html', context)

@@ -18,6 +18,7 @@ class Yarn(models.Model):
 #    yarn_type = models.ForeignKey(Yarntype)
 #    color = 
 #    amount =
+    exists = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name

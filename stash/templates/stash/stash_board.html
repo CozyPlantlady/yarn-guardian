@@ -12,9 +12,16 @@
     <table>
         {% for yarn in yarns %}
             <tr>
-                <td>{{ yarn.name }}</td>
-                <td>{{ yarn.producer }}</td>
+                {% if yarn.exists %}
+                <td><strike>{{ yarn.name }}</strike></td>
+                {% else %}
+                    <td>{{ yarn.name }}</td>
+                {% endif %}
             </tr>
+        {% empty %}
+        <tr>
+            <td> Your stash is empty.</td>
+        </tr>
         {% endfor %}
     </table>
 </body>
