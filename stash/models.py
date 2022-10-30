@@ -12,33 +12,32 @@ class Producer(models.Model):
 
 
 class Material(models.Model):
-    name = models.CharField(max_length=50, null=True, blank=True)
-
+    
     class MaterialType(models.TextChoices):
-        WOOL = 'WO', 'Wool'
-        ALPACA = 'WP', 'Alpaca'
-        CASHMERE = 'WS', 'Cashmere'
+        WOOL = 'Wool'
+        ALPACA = 'Alpaca'
+        CASHMERE = 'Cashmere'
 
     material_type = models.CharField(
-        max_length=2,
+        max_length=10,
         choices=MaterialType.choices,
         default=MaterialType.WOOL
     )
 
     def __str__(self):
-        return self.name
+        return self.material_type
 
 
 class Color(models.Model):
 
     class ColorChoices(models.TextChoices):
-        WHITE = 'White', 'White'
-        YELLOW = 'Yellow', 'Yellow'
-        BLUE = 'Blue', 'Blue'
-        RED = 'Red', 'Red'
-        GREEN = 'Green', 'Green'
-        BLACK = 'Black', 'Black'
-        BROWN = 'Brown', 'Brown'
+        WHITE = 'White'
+        YELLOW = 'Yellow'
+        BLUE = 'Blue'
+        RED = 'Red'
+        GREEN = 'Green'
+        BLACK = 'Black'
+        BROWN = 'Brown'
 
     color_choice = models.CharField(
         max_length=10,
