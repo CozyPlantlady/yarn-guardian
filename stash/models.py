@@ -70,13 +70,20 @@ class Color(models.Model):
         return self.color_choice
 
 
+class Amount(models.Model):
+    amount = models.IntegerField(null=True)
+
+    def __int__(self):
+        return self.amount
+
+
 class Yarn(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
+    body = models.TextField(blank=True)
 #    user = models.ForeignKey(User)
     producer = models.ForeignKey(Producer, on_delete=models.CASCADE,)
-#    yarn_type = models.ForeignKey(Yarntype)
     color = models.ForeignKey(Color, on_delete=models.CASCADE, default='')
-#    amount =
+    amount = models.ForeignKey(Amount, on_delete=models.CASCADE, default='')
     weight = models.ForeignKey(Weight, on_delete=models.CASCADE, default='')
     material = models.ForeignKey(
         Material, on_delete=models.CASCADE, default='')
