@@ -32,16 +32,16 @@ class Material(models.Model):
 class Color(models.Model):
 
     class ColorChoices(models.TextChoices):
-        WHITE = '1', 'White'
-        YELLOW = '2', 'Yellow'
-        BLUE = '3', 'Blue'
-        RED = '4', 'Red'
-        GREEN = '5', 'Green'
-        BLACK = '6', 'Black'
-        BROWN = '7', 'Brown'
+        WHITE = 'White', 'White'
+        YELLOW = 'Yellow', 'Yellow'
+        BLUE = 'Blue', 'Blue'
+        RED = 'Red', 'Red'
+        GREEN = 'Green', 'Green'
+        BLACK = 'Black', 'Black'
+        BROWN = 'Brown', 'Brown'
 
     color_choice = models.CharField(
-        max_length=2,
+        max_length=10,
         choices=ColorChoices.choices,
         default=ColorChoices.WHITE
     )
@@ -57,7 +57,8 @@ class Yarn(models.Model):
 #    yarn_type = models.ForeignKey(Yarntype)
     color = models.ForeignKey(Color, on_delete=models.CASCADE, default='')
 #    amount =
-    material = models.ForeignKey(Material, on_delete=models.CASCADE, default='')
+    material = models.ForeignKey(
+        Material, on_delete=models.CASCADE, default='')
     exists = models.BooleanField(default=True)
 
     def __str__(self):
