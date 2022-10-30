@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Producer, Yarn, Material, Color
+from .models import Producer, Yarn, Material, Color, Weight
 
 
 def get_stash(request):

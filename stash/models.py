@@ -12,7 +12,7 @@ class Producer(models.Model):
 
 
 class Material(models.Model):
-    
+
     class MaterialType(models.TextChoices):
         WOOL = 'Wool'
         ALPACA = 'Alpaca'
@@ -26,6 +26,27 @@ class Material(models.Model):
 
     def __str__(self):
         return self.material_type
+
+
+class Weight(models.Model):
+
+    class WeightType(models.TextChoices):
+        LACE = ('0', 'Lace')
+        SUPERFINE = ('1', 'Super Fine')
+        FINE = ('2', 'Fine')
+        LIGHT = ('3', 'Light')
+        MEDIUM = ('4', 'Medium')
+        BULKY = ('5', 'Bulky')
+        SUPERBULKY = ('6', 'Super Bulky')
+
+    weight_type = models.CharField(
+        max_length=1,
+        choices=WeightType.choices,
+        default=WeightType.LIGHT
+    )
+
+    def __str__(self):
+        return self.weight_type
 
 
 class Color(models.Model):
@@ -56,6 +77,7 @@ class Yarn(models.Model):
 #    yarn_type = models.ForeignKey(Yarntype)
     color = models.ForeignKey(Color, on_delete=models.CASCADE, default='')
 #    amount =
+    weight = models.ForeignKey(Weight, on_delete=models.CASCADE, default='')
     material = models.ForeignKey(
         Material, on_delete=models.CASCADE, default='')
     exists = models.BooleanField(default=True)
