@@ -13,9 +13,13 @@
         {% for yarn in yarns %}
             <tr>
                 {% if yarn.exists %}
-                <td><strike>{{ yarn.name }}</strike></td>
+                <td>{{ yarn.producer }}</td>
+                <td>{{ yarn.name }}</td>
+                <td>{{ yarn.color }}</td>
+
+                <td>{{ yarn.material }}</td>
                 {% else %}
-                    <td>{{ yarn.name }}</td>
+                    <td><strike>{{ yarn.name }}</strike></td>
                 {% endif %}
             </tr>
         {% empty %}
