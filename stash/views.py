@@ -4,7 +4,7 @@ from .models import Producer, Yarn, Material, Color, Weight, Amount
 from .forms import UploadForm
 
 
-def get_home(request):
+def home(request):
     return render(request, 'stash/index.html')
 
 
@@ -26,6 +26,6 @@ def add_yarn(request):
     return render(request, 'stash/add_yarn.html', {'form': UploadForm})
 
 
-#def upload(request):
+# def upload(request):
 #    form = UploadForm(request.POST)
 #    return render(request, 'stash/add_yarn.html', {'form': form})

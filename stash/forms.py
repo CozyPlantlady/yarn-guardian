@@ -15,4 +15,5 @@ class UploadForm(ModelForm):
 
     class Meta:
         model = Yarn
-        fields = ['name', 'body', 'producer', 'color', 'amount', 'weight', 'material', 'exists']
+        fields = ['name', 'body', 'producer', 'color', 'amount',
+                  'weight', 'material', 'exists']
