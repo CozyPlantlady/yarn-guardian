@@ -1,32 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>My stash</h1>
+{% extends "base.html" %}
 
-    <table>
-        {% for yarn in yarns %}
+{% block content %}
+    <div>
+        <h1>My stash</h1>
+
+        <table>
+            {% for yarn in yarns %}
+                <tr>
+                    {% if yarn.exists %}
+                    <td>{{ yarn.producer }}</td>
+                    <td>{{ yarn.name }}</td>
+                    <td>{{ yarn.color }}</td>
+
+                    <td>{{ yarn.material }}</td>
+                    {% else %}
+                        <td><strike>{{ yarn.name }}</strike></td>
+                    {% endif %}
+                </tr>
+            {% empty %}
             <tr>
-                {% if yarn.exists %}
-                <td>{{ yarn.producer }}</td>
-                <td>{{ yarn.name }}</td>
-                <td>{{ yarn.color }}</td>
-
-                <td>{{ yarn.material }}</td>
-                {% else %}
-                    <td><strike>{{ yarn.name }}</strike></td>
-                {% endif %}
+                <td> Your stash is empty.</td>
             </tr>
-        {% empty %}
-        <tr>
-            <td> Your stash is empty.</td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
-</html>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
