@@ -3,6 +3,10 @@ from django.views import generic
 from .models import Producer, Yarn, Material, Color, Weight, Amount
 
 
+def get_home(request):
+    return render(request, 'stash/index.html')
+
+
 def get_stash(request):
     yarns = Yarn.objects.all()
     context = {
