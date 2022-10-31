@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from .models import Producer, Yarn, Material, Color, Weight, Amount
+from .forms import UploadForm
 
 
 def get_home(request):
@@ -17,4 +18,14 @@ def get_stash(request):
 
 
 def add_yarn(request):
-    return render(request, 'stash/add_yarn.html')
+    if request.POST:
+        form = UploadForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('get_stash')
+    return render(request, 'stash/add_yarn.html', {'form': UploadForm})
+
+
+#def upload(request):
+#    form = UploadForm(request.POST)
+#    return render(request, 'stash/add_yarn.html', {'form': form})
