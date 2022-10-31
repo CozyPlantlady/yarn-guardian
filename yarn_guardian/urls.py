@@ -20,7 +20,7 @@ from stash.views import get_home, get_stash
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_home, name='get_home'),
-    path('stash', get_stash, name='get_stash'),
+    path('stash/', get_stash, name='get_stash'),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
 ]
