@@ -14,3 +14,7 @@ def get_stash(request):
     }
     paginate_by = 12
     return render(request, 'stash/stash_board.html', context)
+
+
+def add_yarn(request):
+    return render(request, 'stash/add_yarn.html')
