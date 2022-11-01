@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
     <div>
         <h1>Add a new Yarn:</h1>
         <form method="POST" action="{% url 'add_yarn' %}" enctype="multipart/form-data">
@@ -11,4 +12,8 @@
         </form>
 
     </div>
+{% else %}
+<p> Please login to start using Yarn Guardian!</p>
+{% endif %}
+
 {% endblock %}

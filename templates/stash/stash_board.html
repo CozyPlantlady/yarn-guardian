@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if user.is_authenticated %}
     <div>
         <h1>My stash</h1>
 
@@ -25,4 +26,9 @@
         </table>
         <a href="/add_yarn">Add a new Yarn</a>
     </div>
+
+{% else %}
+<p>Please login to start using Yarn Guardian!</p>
+{% endif %}
+
 {% endblock %}
