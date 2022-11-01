@@ -3,13 +3,13 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Log In" %}{% endblock %}
 
 {% block content %}
 
-<h1>{% trans "Sign In" %}</h1>
+<h1>{% trans "Log In" %}</h1>
 
-<p>{% blocktrans %}If you have not created an account yet, then please
+<p>{% blocktrans %}Hi! Nice to see you here. If you don't have an account yet, then
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 
 <form class="login" method="POST" action="{% url 'account_login' %}">
@@ -18,7 +18,7 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <button class="primaryAction" type="submit">{% trans "Log In" %}</button>
 </form>
 
 {% endblock %}
