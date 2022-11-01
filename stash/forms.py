@@ -3,7 +3,7 @@ from django import forms
 from .models import Yarn
 
 
-class UploadForm(ModelForm):
+class AddYarnForm(ModelForm):
     name = forms.TextInput()
     body = forms.Textarea()
     producer = forms.TextInput()
@@ -16,4 +16,4 @@ class UploadForm(ModelForm):
     class Meta:
         model = Yarn
         fields = ['name', 'body', 'producer', 'color', 'amount',
-                  'weight', 'material', 'exists']
+                  'weight', 'material', 'exists',]

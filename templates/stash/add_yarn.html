@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 
 {% if user.is_authenticated %}
@@ -7,7 +9,7 @@
         <h1>Add a new Yarn:</h1>
         <form method="POST" action="{% url 'add_yarn' %}" enctype="multipart/form-data">
             {% csrf_token %}
-        {{ form }}
+        {{ form | crispy }}
         <button>Submit</button>
         </form>
 
