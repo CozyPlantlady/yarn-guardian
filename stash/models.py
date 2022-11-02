@@ -80,7 +80,8 @@ class Amount(models.Model):
 class Yarn(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     body = models.TextField(blank=True)
-#    user = models.ForeignKey(User)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, default='')
     producer = models.ForeignKey(Producer, on_delete=models.CASCADE,)
     color = models.ForeignKey(Color, on_delete=models.CASCADE, default='')
     amount = models.ForeignKey(Amount, on_delete=models.CASCADE, default='')

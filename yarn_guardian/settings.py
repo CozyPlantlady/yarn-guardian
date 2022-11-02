@@ -16,6 +16,7 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -158,4 +159,11 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# Avoid error 500 problem when authenticating
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+
+# Authenticated user referenced in other models
+# https://learndjango.com/tutorials/django-best-practices-referencing-user-model
+# AUTH_USER_MODEL = 'accounts.CustomUser'

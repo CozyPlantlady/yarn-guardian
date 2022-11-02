@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from .models import Producer, Yarn, Material, Color, Weight, Amount
+from .models import Producer, Yarn, Material, Color, Weight, Amount, User
 from .forms import AddYarnForm
 
 
