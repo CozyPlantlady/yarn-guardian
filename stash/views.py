@@ -21,6 +21,8 @@ def add_yarn(request):
     if request.POST:
         form = AddYarnForm(request.POST)
         if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
             form.save()
         return redirect('get_stash')
     return render(request, 'stash/add_yarn.html', {'form': AddYarnForm})
