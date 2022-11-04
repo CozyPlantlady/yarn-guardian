@@ -96,9 +96,9 @@ WSGI_APPLICATION = 'yarn_guardian.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # Used in Heroku
-#DATABASES = {
- #  'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-#}
+# DATABASES = {
+#  'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+# }
 
 # Used when testing
 DATABASES = {

@@ -50,20 +50,27 @@ class Weight(models.Model):
 
 
 class Color(models.Model):
-
-    class ColorChoices(models.TextChoices):
-        WHITE = 'White'
-        YELLOW = 'Yellow'
-        BLUE = 'Blue'
-        RED = 'Red'
-        GREEN = 'Green'
-        BLACK = 'Black'
-        BROWN = 'Brown'
+    WHITE = 'Wh'
+    YELLOW = 'Ye'
+    BLUE = 'Bl'
+    RED = 'Re'
+    GREEN = 'Gr'
+    BLACK = 'Bl'
+    BROWN = 'Br'
+    COLOR_CHOICES = [
+        (WHITE, 'White'),
+        (YELLOW, 'Yellow'),
+        (BLUE, 'Blue'),
+        (RED, 'Red'),
+        (GREEN, 'Green'),
+        (BLACK, 'Black'),
+        (BROWN, 'Brown'),
+    ]
 
     color_choice = models.CharField(
         max_length=10,
-        choices=ColorChoices.choices,
-        default=ColorChoices.WHITE
+        choices=COLOR_CHOICES,
+        default=WHITE,
     )
 
     def __str__(self):
