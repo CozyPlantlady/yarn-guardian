@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <div>
+        <h1>My projects</h1>
+        <table>
+            {% for project in projects %}
+                <tr>
+                    <td>{{ project.name }}</td>
+                    <td>{{ project.yarn }}</td>
+                    
+                    
+                </tr>
+            {% empty %}
+            <tr>
+                <td class="red"> You don't have any current prpjects.</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% else %}
+<p>Please login to start using Yarn Guardian!</p>
+{% endif %}
+
+{% endblock %}

@@ -50,10 +50,10 @@ def delete_yarn(request, yarn_id):
     return redirect('get_stash')
 
 
-def projects(request):
+def get_projects(request):
     projects = Project.objects.filter(user=request.user)
     context = {
         'projects': projects
     }
     paginate_by = 12
-    return render(request, 'stash/projects.html', context)
+    return render(request, 'stash/projects_board.html', context)
