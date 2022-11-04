@@ -15,22 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from stash.views import home, get_stash, add_yarn, edit_yarn, delete_yarn, get_projects, add_project, edit_project, delete_project
+from stash import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
 
-    path('', home, name='home'),
+    path('', views.home, name='home'),
 
-    path('get_stash', get_stash, name='get_stash'),
-    path('add_yarn', add_yarn, name='add_yarn'),
-    path('edit_yarn/<yarn_id>', edit_yarn, name='edit_yarn'),
-    path('delete_yarn/<yarn_id>', delete_yarn, name='delete_yarn'),
+    path('get_stash', views.get_stash, name='get_stash'),
+    path('add_yarn', views.add_yarn, name='add_yarn'),
+    path('edit_yarn/<yarn_id>', views.edit_yarn, name='edit_yarn'),
+    path('delete_yarn/<yarn_id>', views.delete_yarn, name='delete_yarn'),
 
-    path('get_projects', get_projects, name='get_projects'),
-    path('add_project', add_project, name='add_project'),
-    path('edit_project/<project_id>', edit_project, name='edit_project'),
-    path('delete_project/<project_id>', delete_project, name='delete_project'),
+    path('get_projects', views.get_projects, name='get_projects'),
+    path('add_project', views.add_project, name='add_project'),
+    path('edit_project/<project_id>', views.edit_project, name='edit_project'),
+    path('delete_project/<project_id>',
+         views.delete_project, name='delete_project'),
 ]
