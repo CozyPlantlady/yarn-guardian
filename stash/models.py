@@ -95,7 +95,7 @@ class Yarn(models.Model):
     weight = models.ForeignKey(Weight, on_delete=models.CASCADE, default='')
     material = models.ForeignKey(
         Material, on_delete=models.CASCADE, default='')
-    exists = models.BooleanField(default=True)
+    favorite = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

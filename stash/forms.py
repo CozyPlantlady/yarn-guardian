@@ -11,9 +11,9 @@ class AddYarnForm(ModelForm):
     amount = forms.NumberInput()
     weight = forms.TextInput()
     material = forms.TextInput()
-    exists = forms.BooleanField()
+    favorite = forms.BooleanField()
 
     class Meta:
         model = Yarn
         fields = ['name', 'body', 'producer', 'color', 'amount',
-                  'weight', 'material', 'exists', ]
+                  'weight', 'material', 'favorite', ]
