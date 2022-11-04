@@ -84,3 +84,9 @@ def edit_project(request, project_id):
         'form': form
     }
     return render(request, 'stash/edit_project.html', context, )
+
+
+def delete_project(request, project_id):
+    project = get_object_or_404(Project, id=project_id)
+    project.delete()
+    return redirect('get_projects')

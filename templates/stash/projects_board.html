@@ -10,8 +10,13 @@
                     <td>{{ project.name }}</td>
                     <td>{{ project.yarn }}</td>
                     <td>
-                        <a href="/editproject/{{ project.id }}">
+                        <a href="/edit_project/{{ project.id }}">
                             <button>Edit</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/delete_project/{{ project.id }}">
+                            <button>Delete</button>
                         </a>
                     </td>
                     
