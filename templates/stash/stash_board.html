@@ -17,6 +17,11 @@
                     {% else %}
                         <td><strike>{{ yarn.name }}</strike></td>
                     {% endif %}
+                    <td>
+                        <a href="/edit/{{ yarn.id }}">
+                            <button>Edit</button>
+                        </a>
+                    </td>
                 </tr>
             {% empty %}
             <tr>
