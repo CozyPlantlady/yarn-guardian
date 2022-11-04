@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
-from .models import Producer, Yarn, Material, Color, Weight, Amount, User
+from .models import Producer, Yarn, Material, Color, Weight, Amount, User, Project
 from .forms import AddYarnForm
 
 
@@ -43,7 +43,17 @@ def edit_yarn(request, yarn_id):
     }
     return render(request, 'stash/edit_yarn.html', context, )
 
+
 def delete_yarn(request, yarn_id):
     yarn = get_object_or_404(Yarn, id=yarn_id)
     yarn.delete()
     return redirect('get_stash')
+
+
+def projects(request):
+    projects = Project.objects.filter(user=request.user)
+    context = {
+        'projects': projects
+    }
+    paginate_by = 12
+    return render(request, 'stash/projects.html', context)
