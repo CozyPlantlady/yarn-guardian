@@ -9,7 +9,11 @@
                 <tr>
                     <td>{{ project.name }}</td>
                     <td>{{ project.yarn }}</td>
-                    
+                    <td>
+                        <a href="/editproject/{{ project.id }}">
+                            <button>Edit</button>
+                        </a>
+                    </td>
                     
                 </tr>
             {% empty %}

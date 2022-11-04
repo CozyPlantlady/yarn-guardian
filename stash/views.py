@@ -68,3 +68,19 @@ def add_project(request):
             form.save()
         return redirect('get_projects')
     return render(request, 'stash/add_project.html', {'form': AddProjectForm})
+
+
+def edit_project(request, project_id):
+    project = get_object_or_404(Project, id=project_id)
+    if request.POST:
+        form = AddProjectForm(request.POST, instance=project)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.save()
+        return redirect('get_projects')
+    form = AddProjectForm(instance=project)
+    context = {
+        'form': form
+    }
+    return render(request, 'stash/edit_project.html', context, )
