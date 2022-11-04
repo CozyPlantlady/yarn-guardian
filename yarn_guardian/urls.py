@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from stash.views import home, get_stash, add_yarn, edit_yarn
+from stash.views import home, get_stash, add_yarn, edit_yarn, delete_yarn
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +24,6 @@ urlpatterns = [
     path('add_yarn', add_yarn, name='add_yarn'),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
-    path('edit/<yarn_id>', edit_yarn, name='edit_yarn')
+    path('edit/<yarn_id>', edit_yarn, name='edit_yarn'),
+    path('delete/<yarn_id>', delete_yarn, name='delete_yarn')
 ]

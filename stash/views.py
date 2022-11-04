@@ -42,3 +42,8 @@ def edit_yarn(request, yarn_id):
         'form': form
     }
     return render(request, 'stash/edit_yarn.html', context, )
+
+def delete_yarn(request, yarn_id):
+    yarn = get_object_or_404(Yarn, id=yarn_id)
+    yarn.delete()
+    return redirect('get_stash')
