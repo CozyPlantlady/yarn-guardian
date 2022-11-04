@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <div>
+        <h1>Add a new Project:</h1>
+        <form method="POST" action="{% url 'add_project' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+        {{ form | crispy }}
+        <button>Submit</button>
+        </form>
+
+    </div>
+{% else %}
+<p> Please login to start using Yarn Guardian!</p>
+{% endif %}
+
+{% endblock %}

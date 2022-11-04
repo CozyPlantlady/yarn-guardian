@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Yarn
+from .models import Yarn, Project
 
 
 class AddYarnForm(ModelForm):
@@ -17,3 +17,13 @@ class AddYarnForm(ModelForm):
         model = Yarn
         fields = ['name', 'body', 'producer', 'color', 'amount',
                   'weight', 'material', 'favorite', ]
+
+
+class AddProjectForm(ModelForm):
+    name = forms.TextInput()
+    body = forms.Textarea()
+    yarn = forms.TextInput()
+
+    class Meta:
+        model = Project
+        fields = ['name', 'body', 'yarn', ]

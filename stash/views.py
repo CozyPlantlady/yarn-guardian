@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from .models import Producer, Yarn, Material, Color, Weight, Amount, User, Project
-from .forms import AddYarnForm
+from .forms import AddYarnForm, AddProjectForm
 
 
 def home(request):
@@ -57,3 +57,14 @@ def get_projects(request):
     }
     paginate_by = 12
     return render(request, 'stash/projects_board.html', context)
+
+
+def add_project(request):
+    if request.POST:
+        form = AddProjectForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.save()
+        return redirect('get_projects')
+    return render(request, 'stash/add_project.html', {'form': AddProjectForm})
