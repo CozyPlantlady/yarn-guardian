@@ -9,7 +9,7 @@ def home(request):
 
 
 def get_stash(request):
-    yarns = Yarn.objects.all()
+    yarns = Yarn.objects.filter(user=request.user)
     context = {
         'yarns': yarns
     }
