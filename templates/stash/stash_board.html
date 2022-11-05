@@ -8,19 +8,22 @@
         <div class="container">
             <div class="row">
             {% for yarn in yarns %}
-                <div class="col-6 col-md-4 card">
-                    <p>{{ yarn.producer }}</p>
-                    <p>{{ yarn.name }}</p>
-                    <p>{{ yarn.color }}</p>
+                <div class="col-12 col-md-6 col-xl-3 card text-bg-light">
+                    <div class="card-body">
+                        <p class="card-header">{{ yarn.producer }}</p>
+                        <h5 class="card-title">{{ yarn.name }}</h5>
+                        <p class="card-text">{{ yarn.color }}</p>
 
-                    <p>{{ yarn.material }}</p>
-                    <p>{{ yarn.favorite }}</p>
-                    <a href="/edit_yarn/{{ yarn.id }}">
-                        <button>Edit</button>
-                    </a>
-                    <a href="/delete_yarn/{{ yarn.id }}">
-                        <button>Delete</button>
-                    </a> 
+                        <p class="card-text">{{ yarn.material }}</p>
+                        <p class="card-text">{{ yarn.amount }}g</p>
+                        <p>{{ yarn.favorite }}</p>
+                        <a href="/edit_yarn/{{ yarn.id }}">
+                            <button>Edit</button>
+                        </a>
+                        <a href="/delete_yarn/{{ yarn.id }}">
+                            <button>Delete</button>
+                        </a>
+                    </div>
                 </div>
             {% empty %}
             <tr>
