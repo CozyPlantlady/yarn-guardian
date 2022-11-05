@@ -5,33 +5,30 @@
     <div>
         <h1>My stash</h1>
 
-        <table>
+        <div class="container">
+            <div class="row">
             {% for yarn in yarns %}
-                <tr>
-                    <td>{{ yarn.producer }}</td>
-                    <td>{{ yarn.name }}</td>
-                    <td>{{ yarn.color }}</td>
+                <div class="col-6 col-md-4 card">
+                    <p>{{ yarn.producer }}</p>
+                    <p>{{ yarn.name }}</p>
+                    <p>{{ yarn.color }}</p>
 
-                    <td>{{ yarn.material }}</td>
-                    <td>{{ yarn.favorite }}</td>
-                    <td>
-                        <a href="/edit_yarn/{{ yarn.id }}">
-                            <button>Edit</button>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="/delete_yarn/{{ yarn.id }}">
-                            <button>Delete</button>
-                        </a>
-                    </td>
-                    
-                </tr>
+                    <p>{{ yarn.material }}</p>
+                    <p>{{ yarn.favorite }}</p>
+                    <a href="/edit_yarn/{{ yarn.id }}">
+                        <button>Edit</button>
+                    </a>
+                    <a href="/delete_yarn/{{ yarn.id }}">
+                        <button>Delete</button>
+                    </a> 
+                </div>
             {% empty %}
             <tr>
                 <td class="red"> Your stash is empty.</td>
             </tr>
             {% endfor %}
-        </table>
+            </div>
+        </div>
         <a href="/add_yarn">Add a new Yarn</a>
     </div>
 
