@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<h1>Hi {{ user.username }}!</h1>
+
+{% else %}
+<p>Please login to start using Yarn Guardian!</p>
+{% endif %}
+
+{% endblock %}

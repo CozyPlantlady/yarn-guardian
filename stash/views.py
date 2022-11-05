@@ -8,6 +8,10 @@ def home(request):
     return render(request, 'stash/index.html')
 
 
+def user_page(request):
+    return render(request, 'stash/user_page.html')
+
+
 def get_stash(request):
     yarns = Yarn.objects.filter(user=request.user)
     context = {

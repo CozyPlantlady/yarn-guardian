@@ -23,6 +23,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
 
     path('', views.home, name='home'),
+    path('user_page', views.user_page, name='user_page'),
 
     path('get_stash', views.get_stash, name='get_stash'),
     path('add_yarn', views.add_yarn, name='add_yarn'),
