@@ -1,21 +1,21 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Yarn, Project
+from .models import Yarn, Project, ColorGroup
 
 
 class AddYarnForm(ModelForm):
-    name = forms.TextInput()
-    body = forms.Textarea()
     producer = forms.TextInput()
-    color = forms.TextInput()
+    name = forms.CharField()
+    body = forms.TextInput()
+    color = forms.ModelChoiceField(queryset=ColorGroup.objects.all())
     amount = forms.NumberInput()
-    weight = forms.TextInput()
-    material = forms.TextInput()
+    weight = forms.ChoiceField()
+    material = forms.ChoiceField()
     favorite = forms.BooleanField()
 
     class Meta:
         model = Yarn
-        fields = ['name', 'body', 'producer', 'color', 'amount',
+        fields = ['producer', 'name', 'body', 'color', 'amount',
                   'weight', 'material', 'favorite', ]
 
 
