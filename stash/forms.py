@@ -27,10 +27,26 @@ class AddYarnForm(ModelForm):
         ('SUPERBULKY', 'Super Bulky'),
     )
 
+    MATERIAL_CHOICES = (
+        ('WO', 'Wool'),
+        ('WP', 'Alpaca'),
+        ('WS', 'Cashmere'),
+        ('WM', 'Mohair'),
+        ('WA', 'Angora'),
+        ('WL', 'Llama'),
+        ('CO', 'Cotton'),
+        ('SE', 'Silk'),
+        ('LI', 'Linen'),
+        ('PC', 'Acrylic'),
+        ('PL', 'Polyester'),
+        ('RA', 'Ramie'),
+        ('AF', 'Other Fibers'),
+    )
+
     color = forms.ChoiceField(choices=COLOR_CHOICES)
     weight = forms.ChoiceField(choices=WEIGHT_CHOICES)
+    material = forms.ChoiceField(choices=MATERIAL_CHOICES)
     favorite = forms.BooleanField()
-
 
     class Meta:
         model = Yarn
