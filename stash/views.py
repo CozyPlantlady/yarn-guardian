@@ -14,7 +14,7 @@ def user_page(request):
 
 
 def get_stash(request):
-    yarns = Yarn.objects.filter(user=request.user)
+    yarns = Yarn.objects.filter(user=request.user).order_by('-favorite')
     context = {
         'yarns': yarns
     }
