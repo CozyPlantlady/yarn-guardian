@@ -21,6 +21,7 @@ class Yarn(models.Model):
     weight = models.CharField(max_length=10, null=True, blank=True, default='')
     material = models.CharField(max_length=15, null=True, blank=True)
     favorite = models.BooleanField(blank=True, default=False)
+    frogged = models.BooleanField(blank=True, default=False)
 
     def __str__(self):
         return self.name
