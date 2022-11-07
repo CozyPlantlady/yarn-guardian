@@ -10,10 +10,12 @@ class Yarn(models.Model):
         User, on_delete=models.CASCADE, default='')
     producer = models.CharField(max_length=50, null=False, blank=False)
 
-    color = models.CharField(max_length=10, null=True, blank=True, default='')
+    color_group = models.CharField(
+        max_length=10, null=True, blank=True, default='')
     color_name = models.CharField(
         max_length=50, null=True, blank=True, default='')
-    color_code = models.CharField(max_length=6, null=True, blank=True, default='')
+    color_code = models.CharField(
+        max_length=6, null=True, blank=True, default='')
 
     amount = models.IntegerField(null=True, blank=True, default='')
     weight = models.CharField(max_length=10, null=True, blank=True, default='')

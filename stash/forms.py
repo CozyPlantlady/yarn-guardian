@@ -43,13 +43,13 @@ class AddYarnForm(ModelForm):
         ('AF', 'Other Fibers'),
     )
 
-    color = forms.ChoiceField(choices=COLOR_CHOICES)
+    color_group = forms.ChoiceField(choices=COLOR_CHOICES)
     weight = forms.ChoiceField(choices=WEIGHT_CHOICES)
     material = forms.ChoiceField(choices=MATERIAL_CHOICES)
 
     class Meta:
         model = Yarn
-        fields = ['producer', 'name', 'body', 'color', 'color_name',
+        fields = ['producer', 'name', 'body', 'color_group', 'color_name',
                   'color_code', 'amount', 'weight', 'material', 'favorite', ]
 
 
