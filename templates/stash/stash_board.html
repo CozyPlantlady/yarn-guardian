@@ -22,11 +22,15 @@
                                 <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ yarn.name }}</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ yarn.producer }}, {{ yarn.name }}</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                    <p>{{ yarn.body }}{{ yarn.producer }}{{ yarn.name }}</p>
+                                    <p>This yarn is produced by {{ yarn.producer }}.</p>
+                                    <p>This yarn is in color group {{ yarn.color_group }}.</p>
+                                    <p>Color's official name is {{ yarn.color_name }}, and manufacturers color code is {{ yarn.color_code }}.</p>
+
+                                    <p>Notes:{{ yarn.body }}</p>
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -34,7 +38,7 @@
                                 </div>
                                 </div>
                             </div>
-                        <p class="card-text">{{ yarn.color }}</p>
+                        <p class="card-text">{{ yarn.color_group }}</p>
 
                         <p class="card-text">{{ yarn.material }}</p>
                         <p class="card-text">{{ yarn.amount }}g</p>
