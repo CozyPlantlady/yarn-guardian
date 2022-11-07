@@ -3,27 +3,21 @@ from django import forms
 from .models import Yarn, Project
 
 
-COLOR_CHOICES = [
-    ('WHITE', 'White'),
-    ('YELLOW', 'Yellow'),
-    ('BLUE', 'Blue'),
-    ('RED', 'Red'),
-    ('GREEN', 'Green'),
-    ('BLACK', 'Black'),
-    ('BROWN', 'Brown'),
-    ('PURPLE', 'Purple'),
-    ('GRAY', 'Gray'),
-]
-
-
 class AddYarnForm(ModelForm):
-    producer = forms.TextInput()
-    name = forms.CharField()
-    body = forms.TextInput()
+
+    COLOR_CHOICES = [
+        ('WHITE', 'White'),
+        ('YELLOW', 'Yellow'),
+        ('BLUE', 'Blue'),
+        ('RED', 'Red'),
+        ('GREEN', 'Green'),
+        ('BLACK', 'Black'),
+        ('BROWN', 'Brown'),
+        ('PURPLE', 'Purple'),
+        ('GRAY', 'Gray'),
+    ]
+
     color = forms.ChoiceField(choices=COLOR_CHOICES)
-    amount = forms.NumberInput()
-    weight = forms.ChoiceField()
-    material = forms.ChoiceField()
     favorite = forms.BooleanField()
 
     class Meta:
