@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 
 
 class Yarn(models.Model):
-    name = models.CharField(max_length=50, null=True, blank=True)
+    name = models.CharField(max_length=50, null=True, blank=False)
     body = models.TextField(blank=True)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, default='')
@@ -13,7 +13,7 @@ class Yarn(models.Model):
     amount = models.IntegerField(null=True, blank=True, default='')
     weight = models.CharField(max_length=10, null=True, blank=True, default='')
     material = models.CharField(max_length=15, null=True, blank=True)
-    favorite = models.BooleanField(default=False)
+    favorite = models.BooleanField(blank=True, default=False)
 
     def __str__(self):
         return self.name
