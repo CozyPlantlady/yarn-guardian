@@ -17,8 +17,20 @@ class AddYarnForm(ModelForm):
         ('GRAY', 'Gray'),
     ]
 
+    WEIGHT_CHOICES = (
+        ('LACE', 'Lace'),
+        ('SUPERFINE', 'Super Fine'),
+        ('FINE', 'Fine'),
+        ('LIGHT', 'Light'),
+        ('MEDIUM', 'Medium'),
+        ('BULKY', 'Bulky'),
+        ('SUPERBULKY', 'Super Bulky'),
+    )
+
     color = forms.ChoiceField(choices=COLOR_CHOICES)
+    weight = forms.ChoiceField(choices=WEIGHT_CHOICES)
     favorite = forms.BooleanField()
+
 
     class Meta:
         model = Yarn

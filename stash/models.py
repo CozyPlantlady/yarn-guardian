@@ -28,27 +28,6 @@ class Material(models.Model):
         return self.material_type
 
 
-class Weight(models.Model):
-
-    class WeightType(models.TextChoices):
-        LACE = ('0', 'Lace')
-        SUPERFINE = ('1', 'Super Fine')
-        FINE = ('2', 'Fine')
-        LIGHT = ('3', 'Light')
-        MEDIUM = ('4', 'Medium')
-        BULKY = ('5', 'Bulky')
-        SUPERBULKY = ('6', 'Super Bulky')
-
-    weight_type = models.CharField(
-        max_length=1,
-        choices=WeightType.choices,
-        default=WeightType.LIGHT
-    )
-
-    def __str__(self):
-        return self.weight_type
-
-
 class Yarn(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     body = models.TextField(blank=True)
@@ -57,7 +36,7 @@ class Yarn(models.Model):
     producer = models.ForeignKey(Producer, on_delete=models.CASCADE,)
     color = models.CharField(max_length=10, null=True, blank=True, default='')
     amount = models.IntegerField(null=True, blank=True, default='')
-    weight = models.ForeignKey(Weight, on_delete=models.CASCADE, default='')
+    weight = models.CharField(max_length=10, null=True, blank=True, default='')
     material = models.ForeignKey(
         Material, on_delete=models.CASCADE, default='')
     favorite = models.BooleanField(default=False)

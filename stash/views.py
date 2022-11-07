@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.contrib import admin
-from .models import Producer, Yarn, Material, Weight, Project
+from .models import Producer, Yarn, Material, Project
 from .forms import AddYarnForm, AddProjectForm
 
 
