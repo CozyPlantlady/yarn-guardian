@@ -49,7 +49,7 @@ class AddYarnForm(ModelForm):
 
     class Meta:
         model = Yarn
-        fields = ['producer', 'name', 'body', 'color', 'amount',
+        fields = ['producer', 'name', 'body', 'color', 'color_name', 'amount',
                   'weight', 'material', 'favorite', ]
 
 
