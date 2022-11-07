@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
-from .models import Producer, Yarn, Material, ColorGroup, Weight, Amount, User, Project
+from django.contrib import admin
+from .models import Producer, Yarn, Material, Weight, Amount, Project
 from .forms import AddYarnForm, AddProjectForm
 
 
@@ -24,11 +25,16 @@ def get_stash(request):
 def add_yarn(request):
     if request.POST:
         form = AddYarnForm(request.POST)
+
         if form.is_valid():
+            print("FORM IS VALID")
             form = form.save(commit=False)
             form.user = request.user
             form.save()
+        else:
+            print("ERROR", form.errors)
         return redirect('get_stash')
+    
     return render(request, 'stash/add_yarn.html', {'form': AddYarnForm})
 
 

@@ -49,38 +49,6 @@ class Weight(models.Model):
         return self.weight_type
 
 
-class ColorGroup(models.Model):
-    WHITE = 'White'
-    YELLOW = 'Yellow'
-    BLUE = 'Blue'
-    RED = 'Red'
-    GREEN = 'Green'
-    BLACK = 'Black'
-    BROWN = 'Brown'
-    PURPLE = 'Purple'
-    GRAY = 'Gray'
-    COLOR_CHOICES = [
-        (WHITE, 'White'),
-        (YELLOW, 'Yellow'),
-        (BLUE, 'Blue'),
-        (RED, 'Red'),
-        (GREEN, 'Green'),
-        (BLACK, 'Black'),
-        (BROWN, 'Brown'),
-        (PURPLE, 'Purple'),
-        (GRAY, 'Gray'),
-    ]
-
-    color_choice = models.CharField(
-        max_length=10,
-        choices=COLOR_CHOICES,
-        default=WHITE,
-    )
-
-    def __str__(self):
-        return self.color_choice
-
-
 class Amount(models.Model):
     amount = models.IntegerField(null=True)
 
@@ -94,7 +62,7 @@ class Yarn(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, default='')
     producer = models.ForeignKey(Producer, on_delete=models.CASCADE,)
-    color = models.ForeignKey(ColorGroup, on_delete=models.CASCADE, default='')
+    color = models.CharField(max_length=10, null=True, blank=True, default='')
     amount = models.ForeignKey(Amount, on_delete=models.CASCADE, default='')
     weight = models.ForeignKey(Weight, on_delete=models.CASCADE, default='')
     material = models.ForeignKey(
