@@ -49,13 +49,6 @@ class Weight(models.Model):
         return self.weight_type
 
 
-class Amount(models.Model):
-    amount = models.IntegerField(null=True)
-
-    def __int__(self):
-        return self.amount
-
-
 class Yarn(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     body = models.TextField(blank=True)
@@ -63,7 +56,7 @@ class Yarn(models.Model):
         User, on_delete=models.CASCADE, default='')
     producer = models.ForeignKey(Producer, on_delete=models.CASCADE,)
     color = models.CharField(max_length=10, null=True, blank=True, default='')
-    amount = models.ForeignKey(Amount, on_delete=models.CASCADE, default='')
+    amount = models.IntegerField(null=True, blank=True, default='')
     weight = models.ForeignKey(Weight, on_delete=models.CASCADE, default='')
     material = models.ForeignKey(
         Material, on_delete=models.CASCADE, default='')
