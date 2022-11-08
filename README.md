@@ -86,6 +86,14 @@ User can use this app to write upp information of all the yarns and other suppli
 ### User Stories:
 https://github.com/users/CozyPlantlady/projects/5
 
+### Automated testing:
+Using Djangos build-in TestCase for automated testing.
+AddYarnForm is tested for required fields *producer* and *name*. Test shows that form is not valid if these fields are not filled.
+
+AddYarnForms fields are also tested that they match with Yarn modules fields.
+
+These tests pass without problem.
+
 
 ### Bugs and other issues:
 
