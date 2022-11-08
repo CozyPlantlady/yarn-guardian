@@ -4,30 +4,31 @@
 {% if user.is_authenticated %}
     <div>
         <h1>My projects</h1>
-        <table>
+        <div class="container">
+            <div class="row">
             {% for project in projects %}
-                <tr>
-                    <td>{{ project.name }}</td>
-                    <td>{{ project.yarn }}</td>
-                    <td>
+                <div class="col-12 col-md-6 col-xl-3 card text-bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.body }}</p>
+                        <p class="card-text">{{ project.yarn }}</p>
+                        <p class="card-text">{{ project.yarn.amount }}g</p>
                         <a href="/edit_project/{{ project.id }}">
                             <button>Edit</button>
                         </a>
-                    </td>
-                    <td>
                         <a href="/delete_project/{{ project.id }}">
                             <button>Delete</button>
                         </a>
-                    </td>
-                    
-                </tr>
-            {% empty %}
-            <tr>
-                <td class="red"> You don't have any current projects.</td>
-            </tr>
-            {% endfor %}
-        </table>
-        <a href="/add_project">Add a new Project</a>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="row">
+                    <td class="red"> You don't have any current projects.</td>
+                </div>
+                {% endfor %}
+            </div>
+            <a href="/add_project">Add a new Project</a>
+        </div>
     </div>
 
 {% else %}
