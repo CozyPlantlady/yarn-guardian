@@ -180,10 +180,32 @@ After you are connected, give the name you used for your project in **GitHub**
 For this project I chose to deploy early, and Github update data to Heroku every time I made a new commit and push.
 
 
-
 ## CREDITS
 
 ### Mentor: 
 Once again, thank you [Simen Daehlin](https://github.com/Eventyret/eventyret) for being my mentor!
+
+## CODE CREDITS
+
+[Modal, Varying modal content](https://mdbootstrap.com/docs/standard/components/modal/)
+
+```
+const yarnModal = document.getElementById('yarnModal');
+yarnModal.addEventListener('show.mdb.modal', (e) => {
+  // Button that triggered the modal
+  const button = e.relatedTarget;
+  // Extract info from data-mdb-* attributes
+  const recipient = button.getAttribute('data-mdb-whatever');
+  // If necessary, you could initiate an AJAX request here
+  // and then do the updating in a callback.
+  //
+  // Update the modal's content.
+  const modalTitle = yarnModal.querySelector('.modal-title');
+  const modalBodyInput = yarnModal.querySelector('.modal-body input');
+
+  modalTitle.textContent = `New message to ${recipient}`;
+  modalBodyInput.value = recipient;
+})
+```
 
 ## Thank you for reading!
