@@ -14,23 +14,23 @@
                         <h5 class="card-title">{{ yarn.name }}</h5>
                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" 
-                            data-bs-toggle="modal" data-bs-target="#yarnModal" data-bs-yarn-name="{{ yarn.name }}" data-bs-yarn-body="{{ yarn.body }}" data-bs-yarn-producer="{{ yarn.producer }}">
+                            data-toggle="modal" data-target="#yarnModal" data-yarn-name="{{ yarn.name }}" data-yarn-body="{{ yarn.body }}">
                                 Notes
                             </button>
                             
                             <!-- Modal -->
-                            <div class="modal fade" id="yarnModal" tabindex="-1" aria-labelledby="yarnModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
+                            <div class="modal fade" id="yarnModal" tabindex="-1" role="dialog" aria-labelledby="yarnModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="yarnModalLabel"></h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <h1 class="modal-title fs-5" id="yarnModalLabel">Yarn notes</h1>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-
+                                        <p></p>
                                     </div>
                                     <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                                 </div>
