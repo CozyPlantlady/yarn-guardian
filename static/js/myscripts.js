@@ -32,3 +32,13 @@ $('#yarnModal').on('show.bs.modal', function (event) {
   modal.find('.modal-body').text('Notes: ' + yarnBody)
   modal.find('.modal-body input').val(yarnName)
 })
+
+// Filter anything
+$(document).ready(function () {
+  $("#anythingSearch").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $("#myDIV *").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
