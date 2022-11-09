@@ -13,7 +13,7 @@
                         <p class="card-header">{{ yarn.producer }}</p>
                         <h5 class="card-title">{{ yarn.name }}</h5>
                         <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="{{ yarn }}">
                                 Read more
                             </button>
                             
@@ -44,7 +44,7 @@
                         <p class="card-text">{{ yarn.amount }}g</p>
                         <p>Favorite:{{ yarn.favorite }}</p>
                         <p>Frogged:{{ yarn.frogged }}</p>
-                        <a href="/edit_yarn/{{ yarn.id }}">
+                       <a href="/edit_yarn/{{ yarn.id }}">
                             <button>Edit</button>
                         </a>
                         <a href="/delete_yarn/{{ yarn.id }}">
@@ -63,7 +63,7 @@
     </div>
 
 {% else %}
-<p>Please login to start using Yarn Guardian!</p>
+    <p>Please login to start using Yarn Guardian!</p>
 {% endif %}
 
 {% endblock %}
