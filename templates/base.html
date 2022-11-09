@@ -25,10 +25,7 @@
                 <a class="nav-item nav-link" href="{% url 'get_stash' %}">Yarns</a>
                 <a class="nav-item nav-link" href="{% url 'get_projects' %}">Projects</a>
                 <a class="nav-item nav-link" href="{% url 'user_page' %}">{{ user.username }}</a>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                
                 <div>
                     <li><a href="{% url 'account_logout' %}">Log Out</a></li>
                     {% else %}
