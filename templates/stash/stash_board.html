@@ -39,11 +39,15 @@
                         <p class="card-text">{{ yarn.color_group }}</p>
                         <p class="card-text">{{ yarn.material }}</p>
                         <p class="card-text">{{ yarn.amount }}g</p>
-                        <p>Favorite:{{ yarn.favorite }}</p>
+
+                        {% if yarn.favorite == True %}
+                        <p><i class="fa-solid fa-star"></i></p>
+                        {% endif %}
 
                         {% if yarn.frogged == True %}
                         <p><i class="fa-solid fa-frog"></i></p>
                         {% endif %}
+                        
                        <a href="/edit_yarn/{{ yarn.id }}">
                             <button>Edit</button>
                         </a>
