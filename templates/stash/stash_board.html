@@ -12,12 +12,12 @@
                     <div class="card-body">
                         <p class="card-header">{{ yarn.producer }}</p>
                         <h5 class="card-title">{{ yarn.name }}</h5>
-                        <!-- Button trigger modal -->
+
+                            <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" 
                             data-toggle="modal" data-target="#yarnModal" data-yarn-name="{{ yarn.name }}" data-yarn-body="{{ yarn.body }}">
                                 Notes
                             </button>
-                            
                             <!-- Modal -->
                             <div class="modal fade" id="yarnModal" tabindex="-1" role="dialog" aria-labelledby="yarnModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -35,12 +35,15 @@
                                 </div>
                                 </div>
                             </div>
-                        <p class="card-text">{{ yarn.color_group }}</p>
 
+                        <p class="card-text">{{ yarn.color_group }}</p>
                         <p class="card-text">{{ yarn.material }}</p>
                         <p class="card-text">{{ yarn.amount }}g</p>
                         <p>Favorite:{{ yarn.favorite }}</p>
-                        <p>Frogged:{{ yarn.frogged }}</p>
+
+                        {% if yarn.frogged == True %}
+                        <p><i class="fa-solid fa-frog"></i></p>
+                        {% endif %}
                        <a href="/edit_yarn/{{ yarn.id }}">
                             <button>Edit</button>
                         </a>
