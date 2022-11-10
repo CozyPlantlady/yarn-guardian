@@ -9,7 +9,11 @@
             <div class="row">
             {% for yarn in yarns %}
                 <div class="col-12 col-md-6 col-xl-3 card text-bg-light" id="myDIV">
+                    {% if yarn.amount == 0 %}
+                    <div class="card-body text-bg-secondary">
+                    {% else %}
                     <div class="card-body">
+                    {% endif %}
                         <p class="card-header">{{ yarn.producer }}</p>
                         <h5 class="card-title">{{ yarn.name }}</h5>
 
