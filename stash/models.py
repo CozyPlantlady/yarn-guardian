@@ -19,7 +19,7 @@ class Yarn(models.Model):
 
     amount = models.IntegerField(null=True, blank=True, default='')
     weight = models.CharField(max_length=10, null=True, blank=True, default='')
-    material = models.CharField(max_length=15, null=True, blank=True)
+    material = models.CharField(max_length=100, null=True, blank=True)
     favorite = models.BooleanField(blank=True, default=False)
     frogged = models.BooleanField(blank=True, default=False)
 

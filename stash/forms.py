@@ -45,7 +45,13 @@ class AddYarnForm(ModelForm):
 
     color_group = forms.ChoiceField(choices=COLOR_CHOICES)
     weight = forms.ChoiceField(choices=WEIGHT_CHOICES)
-    material = forms.ChoiceField(choices=MATERIAL_CHOICES)
+    material = forms.MultipleChoiceField(
+        choices=MATERIAL_CHOICES, widget=forms.CheckboxSelectMultiple())
+
+    def clean_my_field(self):
+        if len(self.cleaned_data['material']) > 3:
+            raise forms.ValidationError('You can select up to 3.')
+        return self.cleaned_data['my_field']
 
     class Meta:
         model = Yarn
