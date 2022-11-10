@@ -187,25 +187,19 @@ Once again, thank you [Simen Daehlin](https://github.com/Eventyret/eventyret) fo
 
 ## CODE CREDITS
 
-[Modal, Varying modal content](https://mdbootstrap.com/docs/standard/components/modal/)
+Bootstrap!
+
+
+[In Django is there a way to display choices as checkboxes? Answer from Jonny Buchanan](https://stackoverflow.com/questions/147752/in-django-is-there-a-way-to-display-choices-as-checkboxes)
 
 ```
-const yarnModal = document.getElementById('yarnModal');
-yarnModal.addEventListener('show.mdb.modal', (e) => {
-  // Button that triggered the modal
-  const button = e.relatedTarget;
-  // Extract info from data-mdb-* attributes
-  const recipient = button.getAttribute('data-mdb-whatever');
-  // If necessary, you could initiate an AJAX request here
-  // and then do the updating in a callback.
-  //
-  // Update the modal's content.
-  const modalTitle = yarnModal.querySelector('.modal-title');
-  const modalBodyInput = yarnModal.querySelector('.modal-body input');
+class MyForm(forms.Form):
+    my_field = forms.MultipleChoiceField(choices=SOME_CHOICES, widget=forms.CheckboxSelectMultiple())
 
-  modalTitle.textContent = `New message to ${recipient}`;
-  modalBodyInput.value = recipient;
-})
+    def clean_my_field(self):
+        if len(self.cleaned_data['my_field']) > 3:
+            raise forms.ValidationError('Select no more than 3.')
+        return self.cleaned_data['my_field']
 ```
 
 ## Thank you for reading!
