@@ -38,7 +38,12 @@
 
                         <p class="card-text">{{ yarn.color_group }}</p>
                         <p class="card-text">{{ yarn.material }}</p>
+
+                        {% if yarn.amount == None %}
+                        <p class="card-text"> -- g</p>
+                        {% else %}
                         <p class="card-text">{{ yarn.amount }}g</p>
+                        {% endif %}
 
                         {% if yarn.favorite == True %}
                         <p><i class="fa-solid fa-star"></i></p>
