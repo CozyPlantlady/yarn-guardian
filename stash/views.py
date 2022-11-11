@@ -60,7 +60,7 @@ def delete_yarn(request, yarn_id):
 
 
 def get_projects(request):
-    projects = Project.objects.filter(user=request.user)
+    projects = Project.objects.filter(user=request.user).order_by('finished')
     context = {
         'projects': projects
     }

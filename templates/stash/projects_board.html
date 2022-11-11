@@ -8,10 +8,19 @@
             <div class="row">
             {% for project in projects %}
                 <div class="col-12 col-md-6 col-xl-3 card text-bg-light">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ project.name }} <a href="/edit_project/{{ project.id }}">
-                            <i class="fa-solid fa-pen"></i>
-                      </a></h5> 
+                    <div class="card-body container">
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">{{ project.name }} 
+                                    <a href="/edit_project/{{ project.id }}">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </a>
+                                    {% if project.finished == True %}
+                                    <p><i class="fa-solid fa-check"></i></p>
+                                    {% endif %}
+                                </h5>
+                            </div>
+                        </div>
                         <p class="card-text">{{ project.body }}</p>
                         {% if project.yarn == None %}
                         <p>Add a yarn to this project <a href="/edit_project/{{ project.id }}">
