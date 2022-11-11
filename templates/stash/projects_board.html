@@ -19,7 +19,11 @@
                       </a></p>
                         {% else %}
                         <p class="card-text">{{ project.yarn }}</p>
-                        <p class="card-text">{{ project.yarn.amount }}g</p>
+                            {% if yarn.amount == None %}
+                            <p class="card-text"> -- g</p>
+                            {% else %}
+                            <p class="card-text">{{ yarn.amount }}g</p>
+                            {% endif %}
                         {% endif %}
                         <p class="card-text">
                             <button class="btn btn-light btn-outline-secondary">
