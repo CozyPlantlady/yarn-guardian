@@ -34,7 +34,7 @@ class Project(models.Model):
         User, on_delete=models.CASCADE, default='')
     link = models.URLField(default='', blank=True)
     yarn = models.ForeignKey(
-        Yarn, on_delete=models.CASCADE, default='', null=True, blank=True)
+        Yarn, on_delete=models.SET_NULL, default='', null=True, blank=True)
     finished = models.BooleanField(default=False)
 
     def __str__(self):
