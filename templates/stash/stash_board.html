@@ -13,10 +13,10 @@
                     {% else %}
                     <div class="card-body">
                     {% endif %}
-                        <p class="card-header">{{ yarn.producer }}</p>
                         <h5 class="card-title">{{ yarn.name }} <a href="/edit_yarn/{{ yarn.id }}">
                               <i class="fa-solid fa-pen">  </i>
                         </a></h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ yarn.producer }}</h6>
 
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" 
