@@ -28,12 +28,13 @@ class Yarn(models.Model):
 
 
 class Project(models.Model):
-    name = models.CharField(max_length=50, null=True, blank=True)
+    name = models.CharField(max_length=50, null=True, blank=False)
     body = models.TextField(blank=True)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, default='')
-    link = models.URLField(default='')
-    yarn = models.ForeignKey(Yarn, on_delete=models.CASCADE, default='')
+    link = models.URLField(default='', blank=True)
+    yarn = models.ForeignKey(
+        Yarn, on_delete=models.CASCADE, default='', null=True, blank=True)
     finished = models.BooleanField(default=False)
 
     def __str__(self):
