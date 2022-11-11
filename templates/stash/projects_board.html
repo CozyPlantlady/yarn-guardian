@@ -13,8 +13,14 @@
                             <i class="fa-solid fa-pen"></i>
                       </a></h5> 
                         <p class="card-text">{{ project.body }}</p>
+                        {% if project.yarn == None %}
+                        <p>Add a yarn to this project <a href="/edit_project/{{ project.id }}">
+                            <i class="fa-solid fa-pen"></i>
+                      </a></p>
+                        {% else %}
                         <p class="card-text">{{ project.yarn }}</p>
                         <p class="card-text">{{ project.yarn.amount }}g</p>
+                        {% endif %}
                         <p class="card-text">
                             <button class="btn btn-light btn-outline-secondary">
                                 <a class="text-decoration-none text-dark" href="{{ project.link }}" target="_blank">Project link <i class="fa-solid fa-arrow-right"></i></a>
