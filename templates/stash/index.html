@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
+
 {% block content %}
-    <div class="welcome-container">
+    <div class="welcome-container has-bg-img">
+        <img class="bg-img" src="https://res.cloudinary.com/a-fluff-of-cotton/image/upload/v1668203441/thread-gd3fcec166_1920_bdrig5.jpg">
         <h1>Yarn Guardian welcomes you!</h1>
+
         {% if user.is_authenticated %}
         <div> You are logged in as {{ user.username}}</div>
         {% else %}
