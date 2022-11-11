@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div>
+    <div class="welcome-container">
         <h1>Yarn Guardian welcomes you!</h1>
         {% if user.is_authenticated %}
         <div> You are logged in as {{ user.username}}</div>
