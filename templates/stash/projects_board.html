@@ -15,7 +15,11 @@
                         <p class="card-text">{{ project.body }}</p>
                         <p class="card-text">{{ project.yarn }}</p>
                         <p class="card-text">{{ project.yarn.amount }}g</p>
-                        <p class="card-text"><button><a href="{{ project.link }}" target="_blank">Project link</a></button></p>
+                        <p class="card-text">
+                            <button class="btn btn-light btn-outline-secondary">
+                                <a class="text-decoration-none text-dark" href="{{ project.link }}" target="_blank">Project link <i class="fa-solid fa-arrow-right"></i></a>
+                            </button>
+                        </p>
                         <a href="/delete_project/{{ project.id }}">
                             <button> <i class="fa-solid fa-trash"></i></button>
                         </a>
