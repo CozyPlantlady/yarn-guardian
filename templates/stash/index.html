@@ -6,14 +6,10 @@
         {% if user.is_authenticated %}
         <div> You are logged in as {{ user.username}}</div>
         {% else %}
-        <div class="container">
-            <div class="row">
-                <div class="col justify-content-center">
-                    <p><a href="{% url 'account_login' %}">Log In</a></p>
-                </div>
-                <div class="col justify-content-center">
-                    <p><a href="{% url 'account_signup' %}">Sign Up</a></p>
-                </div>
+        <div>
+            <div class="d-grid gap-2 col-3 mx-auto">
+                <button type="button" class="btn btn-light btn-outline-secondary btn-lg"><a class="text-decoration-none text-dark" href="{% url 'account_login' %}">Log In</a></button>
+                <button type="button" class="btn btn-light btn-outline-secondary"><a class="text-decoration-none text-dark"href="{% url 'account_signup' %}">Sign Up</a></button>
             </div>
         </div>>
         {% endif %}
