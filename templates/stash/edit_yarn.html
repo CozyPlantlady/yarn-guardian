@@ -6,13 +6,15 @@
     {% if user.is_authenticated %}
 
     <div class="container">
-        <h1 class="special-font extra-fluff  text-center">Edit Yarn Information:</h1>
+        <h1 class="special-font extra-fluff text-center">Edit Yarn Information:</h1>
         <div class="row">
             <div class="col-10">
                 <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <button class="btn button-warning bg-lg">Submit</button>
+                    <div class="text-center extra-fluff ">
+                        <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+                    </div>
                 </form>
             </div> 
         </div>
