@@ -1,21 +1,23 @@
 {% extends "base.html" %}
-
 {% load crispy_forms_tags %}
 
 {% block content %}
+    {% if user.is_authenticated %}
 
-{% if user.is_authenticated %}
-    <div>
-        <h1>Edit Yarn Information:</h1>
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form | crispy }}
-        <button>Submit</button>
-        </form>
-
-    </div>
-{% else %}
-<p> Please login to start using Yarn Guardian!</p>
-{% endif %}
+        <div class="container peach-bg">
+            <h1 class="special-font">Edit Yarn Information:</h1>
+            <div class="row">
+                <div class="col-10">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button class="btn button-warning bg-lg">Submit</button>
+                    </form>
+                </div> 
+            </div>
+        </div>
+    {% else %}
+    <p> Please login to start using Yarn Guardian!</p>
+    {% endif %}
 
 {% endblock %}
