@@ -10,6 +10,10 @@ footer {
 
 }
 
+#my-stash {
+    padding-bottom: 20rem;
+}
+
 .special-font {
     font-family: 'Pacifico', sans-serif;
 }
@@ -51,9 +55,16 @@ footer {
     background: #E2D8EC;
 }
 
-.how-to-use {
+.peach-bg {
     background: #F6D7C0;
-    
+}
+
+.frog-color {
+    color: #21A48F;
+}
+
+.star-color {
+    color: #EEEB8B;
 }
 
 #F6D7C0
