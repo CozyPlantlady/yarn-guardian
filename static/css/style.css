@@ -4,6 +4,11 @@ body {
     font-family: 'Titillum Web', sans-serif;
 }
 
+footer {
+    background-color: #776674;
+    color:#E2D8EC;
+}
+
 .special-font {
     font-family: 'Pacifico', sans-serif;
 }
