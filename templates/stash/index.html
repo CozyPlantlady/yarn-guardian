@@ -2,21 +2,54 @@
 
 
 {% block content %}
-    <div class="index-bg">
-        <div class="">
-            <h1>Yarn Guardian welcomes you!</h1>
-
-            {% if user.is_authenticated %}
-            <div> You are logged in as {{ user.username}}</div>
-        
-            {% else %}
-            <div>
-                <div class="d-grid gap-2 col-3 mx-auto">
-                    <button type="button" class="btn btn-light btn-outline-secondary btn-lg"><a class="text-decoration-none text-dark" href="{% url 'account_login' %}">Log In</a></button>
-                    <button type="button" class="btn btn-light btn-outline-secondary"><a class="text-decoration-none text-dark"href="{% url 'account_signup' %}">Sign Up</a></button>
+    <div class="welcome-container base-bg ">
+        <div class="container text-center welcome">
+            <div class="row">
+                <div class="col-12 ">
+                        <h1>Yarn Guardian welcomes you!</h1>
                 </div>
-            </div>>
-            {% endif %}
+                {% if user.is_authenticated %}
+                <div> You are logged in as {{ user.username}}</div>
+            
+                {% else %}
+                <div>
+                    <div class="d-grid gap-2 col-3 mx-auto">
+                        <button type="button" class="btn btn-outline-warning btn-lg"><a class="text-decoration-none text-dark" href="{% url 'account_login' %}">Log In</a></button>
+                        <button type="button" class="btn btn-bd-primary"><a class="text-decoration-none text-dark"href="{% url 'account_signup' %}">Sign Up</a></button>
+                    </div>
+                </div>
+                <div>
+                    <h5>Not sure yet? Scroll down to read more!</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center base-bg what-is-yarn-guardian">
+        <div class="row">
+            <div class="col-12">
+                <h4>What is Yarn Guardian?</h4>
+            </div>
+            <div>
+                <p>Yarn Guardian is a little helper, that helps you keep record of your yarns.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center base-bg how-to-use">
+        <div class="row">
+            <div class="col-12">
+                <h4>How to use it?</h4>
+            </div>
+            <div>
+                <p><i class="fa-solid fa-plus"></i> You can log a yarn by giving it's name, producer, color and material <i class="fa-solid fa-plus"></i></p>
+                <p><i class="fa-solid fa-pen"></i> You can make notes too! <i class="fa-solid fa-pen"></i></p>
+                <p><i class="fa-solid fa-star"></i> You can tag yarn as a favorite to find it easier <i class="fa-solid fa-star"></i></p>
+                 <p><i class="fa-solid fa-frog"></i> If you ever have to undo a project you can tag yarn as frogged <i class="fa-solid fa-frog"></i></p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+                {% endif %}
+            </div>
         </div>
     </div>
 {% endblock %}

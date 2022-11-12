@@ -1,7 +1,16 @@
-.index-bg {
+.welcome-container {
     height: 100vh;
 
     background: url("background.jpg") no-repeat center center fixed;
+
+    background-attachment: local;
+}
+
+.welcome {
+    background: #F3AC94;
+}
+
+.base-bg {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,4 +21,19 @@
     justify-content: center;
 
     position: relative;
+
 }
+
+.what-is-yarn-guardian {
+    background: #E2D8EC;
+}
+
+.how-to-use {
+    background: #F6D7C0;
+}
+
+#F6D7C0
+#776674
+#F3AC94
+#E2D8EC
+
