@@ -10,7 +10,31 @@
                         <h1><span class="special-font">Yarn Guardian</span><br>welcomes you!</h1>
                 </div>
                 {% if user.is_authenticated %}
-                <div> You are logged in as {{ user.username}}</div>
+                <div class="col-12"> You are logged in as <span class="special-font">{{ user.username}}</span></div>
+                <div class="container extra-fluff">
+                    <div class="row justify-content-center">
+                        <h3 class="col-12 extra-fluff special-font">Where to start?</h3>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-6">
+                            <h4>Add a yarn to your stash here:  
+                                <button class="btn btn-warning">
+                                    <a class="nav-item nav-link" href="{% url 'get_stash' %}">
+                                        Yarns
+                                    </a>
+                                </button>
+                            </h4>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h4> Start a New project here: 
+                                <button class="btn btn-warning">
+                                    <a class="nav-item nav-link" href="{% url 'get_projects' %}">
+                                        Projects
+                                    </a>
+                                </button>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
             
                 {% else %}
 <!-- What is Yarn Guardian-->
