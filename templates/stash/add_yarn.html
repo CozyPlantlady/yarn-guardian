@@ -12,9 +12,9 @@
                 <form method="POST" action="{% url 'add_yarn' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                    <div class="text-center extra-fluff ">
-                        <button>Submit</button>
-                    </div>
+                <div class="text-center extra-fluff ">
+                    <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+                </div>
                 </form>
             </div>
         </div>
