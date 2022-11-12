@@ -33,7 +33,6 @@ def add_yarn(request):
         else:
             print("ERROR", form.errors)
         return redirect('get_stash')
-    
     return render(request, 'stash/add_yarn.html', {'form': AddYarnForm})
 
 

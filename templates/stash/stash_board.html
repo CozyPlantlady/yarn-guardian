@@ -5,8 +5,9 @@
 <!-- Header -->
     <div id="my-stash" class="peach-bg">
         <h1 class="special-font text-center extra-fluff">My stash</h1>
-        <div class="container">
+
 <!-- Start of Yarn Cards -->
+        <div class="container">
             <div class="row">
             {% for yarn in yarns %}
                 <div class="col-12 col-md-6 col-xl-3 card text-bg-light">
@@ -18,15 +19,8 @@
 <!-- Yarn card inside -->
                         <div class="container">
                             <div class="row text-center">
-                                <div class="col-10">
+                                <div class="col-12">
                                     <h4 class="card-title special-font">{{ yarn.name }}</h4>
-                                </div>
-                                <div class="col-2">
-                                    <button class="btn">
-                                        <a href="/edit_yarn/{{ yarn.id }}">
-                                            <i class="fa-solid fa-pen note-red"></i>
-                                        </a>
-                                    </button>
                                 </div>
                                 <div>
                                     <h6 class="card-subtitle mb-2 text-muted">{{ yarn.producer }}</h6>
@@ -46,77 +40,90 @@
                                 </div>
                                 {% endif %}
                             </div>
-                        </div>
 
-                        <div class="container">
                             <div class="row text-center">
-                            <p class="card-text">{{ yarn.color_group }}, {{ yarn.color_name }}, {{ yarn.color_code }}</p>
-                            <p class="card-text">{{ yarn.material }}</p>
-                        </div>
-
-                            {% if yarn.amount == None %}
-                            <p class="card-text special-font"> -- g</p>
-                            {% else %}
-                            <p class="card-text special-font">{{ yarn.amount }}g</p>
-                            {% endif %}
-
+                                <p class="card-text">{{ yarn.color_group }} {{ yarn.color_name }} {{ yarn.color_code }}</p>
+                                <p class="card-text">{{ yarn.material }}</p>
                             
-                            
-                            <a href="/delete_yarn/{{ yarn.id }}">
-                                <button> <i class="fa-solid fa-trash"></i></button>
-                            </a>
-                        </div>
+                                {% if yarn.amount == None %}
+                                <p class="card-text special-font"> -- g</p>
+                                {% else %}
+                                <p class="card-text special-font">{{ yarn.amount }}g</p>
+                                {% endif %}
+                                <hr>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn">
+                                        <a href="/delete_yarn/{{ yarn.id }}">
+                                            <i class="fa-solid fa-trash trash-red"></i>
+                                        </a>
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button class="btn ">
+                                        <a href="/edit_yarn/{{ yarn.id }}">
+                                            <i class="fa-solid fa-pen note-red"></i>
+                                        </a>
+                                    </button>
+                                </div>
+                        
 <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-warning" 
-                            data-toggle="modal" data-target="#yarnModal" data-yarn-name="{{ yarn.name }}" data-yarn-body="{{ yarn.body }}">
-                                Notes
-                            </button>
+                                <div class="col">
+                                    <button type="button" class="btn btn-warning" 
+                                    data-toggle="modal" data-target="#yarnModal" data-yarn-name="{{ yarn.name }}" data-yarn-body="{{ yarn.body }}">
+                                        Notes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                            
 <!-- Inside Modal -->
-                            <div class="modal fade" id="yarnModal" tabindex="-1" role="dialog" aria-labelledby="yarnModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
+                        <div class="modal fade" id="yarnModal" tabindex="-1" role="dialog" aria-labelledby="yarnModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="yarnModalLabel">Yarn notes</h1>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-                                    </div>
+                                        <h1 class="modal-title fs-5" id="yarnModalLabel">Yarn notes</h1>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                                        </div>
                                     <div class="modal-body">
                                         <p></p>
                                     </div>
                                     <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
-                                </div>
                             </div>
+                        </div>
 <!-- Modal Ends -->
-
-                        
+                          
                     </div>
                 </div>
-            {% empty %}
-            <div class="container text-center">
-                <div class="row"> 
-                    <div class="col">
-                        <p>Your stash is empty</p>
-                        <p>Add first yarn here</p>
-                        <p><i class="fa-solid fa-arrow-down  fa-2x"></i></p>
+                {% empty %}
+                <div class="container text-center">
+                    <div class="row"> 
+                        <div class="col">
+                            <p>Your stash is empty</p>
+                            <p>Add first yarn here</p>
+                            <p><i class="fa-solid fa-arrow-down  fa-2x"></i></p>
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
+                </div>
             </div>
-            {% endfor %}
-            </div>
-        </div>
 <!-- End of Yarn Cards -->
 
 <!-- Add New Yarn Button -->
-        <div class="d-grid col-2 mx-auto extra-fluff">
-            <button class="btn btn-warning btn-lg">
-                <a class="text-decoration-none text-dark" href="/add_yarn">New Yarn <i class="fa-solid fa-plus"></i></a>
-            </button>
-        </div>
+            <div class="d-grid col-2 mx-auto extra-fluff">
+                <button class="btn btn-warning btn-lg">
+                    <a class="text-decoration-none text-dark" href="/add_yarn">New Yarn <i class="fa-solid fa-plus"></i></a>
+                </button>
+            </div>
 <!-- End Button-->
+        </div>
     </div>
-
 {% else %}
     <p>Please login to start using Yarn Guardian!</p>
 {% endif %}
