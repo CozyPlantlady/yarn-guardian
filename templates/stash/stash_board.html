@@ -2,9 +2,11 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+<!-- Header -->
     <div id="my-stash" class="peach-bg">
         <h1 class="special-font text-center extra-fluff">My stash</h1>
         <div class="container">
+<!-- Start of Yarn Cards -->
             <div class="row">
             {% for yarn in yarns %}
                 <div class="col-12 col-md-6 col-xl-3 card text-bg-light">
@@ -13,17 +15,63 @@
                     {% else %}
                     <div class="card-body">
                     {% endif %}
-                        <h5 class="card-title">{{ yarn.name }} <a href="/edit_yarn/{{ yarn.id }}">
-                              <i class="fa-solid fa-pen">  </i>
-                        </a></h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ yarn.producer }}</h6>
+<!-- Yarn card inside -->
+                        <div class="container">
+                            <div class="row text-center">
+                                <div class="col-10">
+                                    <h4 class="card-title special-font">{{ yarn.name }}</h4>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn">
+                                        <a href="/edit_yarn/{{ yarn.id }}">
+                                            <i class="fa-solid fa-pen note-red"></i>
+                                        </a>
+                                    </button>
+                                </div>
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ yarn.producer }}</h6>
+                                </div>
+                            </div>
 
-                            <!-- Button trigger modal -->
+                            <div class="row text-center">
+                                {% if yarn.favorite == True %}
+                                <div class="col">
+                                    <p><i class="fa-solid fa-star star-color fa-2x"></i></p>
+                                </div>
+                                {% endif %}
+                                    
+                                {% if yarn.frogged == True %}
+                                <div class="col">
+                                    <p><i class="fa-solid fa-frog frog-color fa-2x"></i></p>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="row text-center">
+                            <p class="card-text">{{ yarn.color_group }}, {{ yarn.color_name }}, {{ yarn.color_code }}</p>
+                            <p class="card-text">{{ yarn.material }}</p>
+                        </div>
+
+                            {% if yarn.amount == None %}
+                            <p class="card-text special-font"> -- g</p>
+                            {% else %}
+                            <p class="card-text special-font">{{ yarn.amount }}g</p>
+                            {% endif %}
+
+                            
+                            
+                            <a href="/delete_yarn/{{ yarn.id }}">
+                                <button> <i class="fa-solid fa-trash"></i></button>
+                            </a>
+                        </div>
+<!-- Button trigger modal -->
                             <button type="button" class="btn btn-warning" 
                             data-toggle="modal" data-target="#yarnModal" data-yarn-name="{{ yarn.name }}" data-yarn-body="{{ yarn.body }}">
                                 Notes
                             </button>
-                            <!-- Modal -->
+<!-- Inside Modal -->
                             <div class="modal fade" id="yarnModal" tabindex="-1" role="dialog" aria-labelledby="yarnModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -40,27 +88,9 @@
                                 </div>
                                 </div>
                             </div>
+<!-- Modal Ends -->
 
-                        <p class="card-text">{{ yarn.color_group }}</p>
-                        <p class="card-text">{{ yarn.material }}</p>
-
-                        {% if yarn.amount == None %}
-                        <p class="card-text"> -- g</p>
-                        {% else %}
-                        <p class="card-text">{{ yarn.amount }}g</p>
-                        {% endif %}
-
-                        {% if yarn.favorite == True %}
-                        <p><i class="fa-solid fa-star star-color fa-2x"></i></p>
-                        {% endif %}
-
-                        {% if yarn.frogged == True %}
-                        <p><i class="fa-solid fa-frog frog-color fa-2x"></i></p>
-                        {% endif %}
                         
-                        <a href="/delete_yarn/{{ yarn.id }}">
-                            <button> <i class="fa-solid fa-trash"></i></button>
-                        </a>
                     </div>
                 </div>
             {% empty %}
@@ -76,11 +106,15 @@
             {% endfor %}
             </div>
         </div>
+<!-- End of Yarn Cards -->
+
+<!-- Add New Yarn Button -->
         <div class="d-grid col-2 mx-auto extra-fluff">
             <button class="btn btn-warning btn-lg">
                 <a class="text-decoration-none text-dark" href="/add_yarn">New Yarn <i class="fa-solid fa-plus"></i></a>
             </button>
         </div>
+<!-- End Button-->
     </div>
 
 {% else %}

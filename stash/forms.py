@@ -51,7 +51,6 @@ class AddYarnForm(ModelForm):
         choices=MATERIAL_CHOICES, widget=forms.CheckboxSelectMultiple(),
         label="Material (choose max 3):", required=False)
 
-
     def clean_my_field(self):
         if len(self.cleaned_data['material']) > 3:
             raise forms.ValidationError('You can select up to 3.')

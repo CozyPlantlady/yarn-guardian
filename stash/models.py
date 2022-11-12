@@ -21,7 +21,7 @@ class Yarn(models.Model):
 
     amount = models.IntegerField(null=True, blank=True, default='',
                                  verbose_name=u"How much yarn you have?")
-    weight = models.CharField(max_length=10, blank=True, default='')
+    weight = models.CharField(max_length=11, blank=True, default='')
     material = models.CharField(max_length=100, null=True, blank=True)
     favorite = models.BooleanField(blank=True, default=False)
     frogged = models.BooleanField(blank=True, default=False)
