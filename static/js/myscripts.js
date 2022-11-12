@@ -6,7 +6,7 @@ $('#yarnModal').on('show.bs.modal', function (event) {
 
 
   var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + yarnName)
-  modal.find('.modal-body').text('Notes: ' + yarnBody)
+  modal.find('.modal-title').text('Notes about ' + yarnName)
+  modal.find('.modal-body').text(yarnBody)
   modal.find('.modal-body input').val(yarnName)
 })
