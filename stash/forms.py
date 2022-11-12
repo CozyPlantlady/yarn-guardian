@@ -43,10 +43,14 @@ class AddYarnForm(ModelForm):
         ('Other Fibers', 'Other Fibers'),
     )
 
-    color_group = forms.ChoiceField(choices=COLOR_CHOICES)
-    weight = forms.ChoiceField(choices=WEIGHT_CHOICES)
+    color_group = forms.ChoiceField(
+        choices=COLOR_CHOICES, label='Closest color:', required=False)
+    weight = forms.ChoiceField(
+        choices=WEIGHT_CHOICES, label="Yarn thickness:", required=False)
     material = forms.MultipleChoiceField(
-        choices=MATERIAL_CHOICES, widget=forms.CheckboxSelectMultiple())
+        choices=MATERIAL_CHOICES, widget=forms.CheckboxSelectMultiple(),
+        label="Material (choose max 3):", required=False)
+
 
     def clean_my_field(self):
         if len(self.cleaned_data['material']) > 3:
@@ -55,9 +59,9 @@ class AddYarnForm(ModelForm):
 
     class Meta:
         model = Yarn
-        fields = ['producer', 'name', 'body', 'color_group', 'color_name',
-                  'color_code', 'amount', 'weight', 'material', 'favorite',
-                  'frogged', ]
+        fields = ['producer', 'name', 'favorite',
+                  'frogged', 'body', 'color_group', 'color_name',
+                  'color_code', 'amount', 'weight', 'material', ]
 
 
 class AddProjectForm(ModelForm):
