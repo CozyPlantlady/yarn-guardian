@@ -2,19 +2,21 @@
 
 
 {% block content %}
-    <div class="welcome-container has-bg-img">
-        <img class="bg-img" src="https://res.cloudinary.com/a-fluff-of-cotton/image/upload/v1668203441/thread-gd3fcec166_1920_bdrig5.jpg">
-        <h1>Yarn Guardian welcomes you!</h1>
+    <div class="index-bg">
+        <div class="">
+            <h1>Yarn Guardian welcomes you!</h1>
 
-        {% if user.is_authenticated %}
-        <div> You are logged in as {{ user.username}}</div>
-        {% else %}
-        <div>
-            <div class="d-grid gap-2 col-3 mx-auto">
-                <button type="button" class="btn btn-light btn-outline-secondary btn-lg"><a class="text-decoration-none text-dark" href="{% url 'account_login' %}">Log In</a></button>
-                <button type="button" class="btn btn-light btn-outline-secondary"><a class="text-decoration-none text-dark"href="{% url 'account_signup' %}">Sign Up</a></button>
-            </div>
-        </div>>
-        {% endif %}
+            {% if user.is_authenticated %}
+            <div> You are logged in as {{ user.username}}</div>
+        
+            {% else %}
+            <div>
+                <div class="d-grid gap-2 col-3 mx-auto">
+                    <button type="button" class="btn btn-light btn-outline-secondary btn-lg"><a class="text-decoration-none text-dark" href="{% url 'account_login' %}">Log In</a></button>
+                    <button type="button" class="btn btn-light btn-outline-secondary"><a class="text-decoration-none text-dark"href="{% url 'account_signup' %}">Sign Up</a></button>
+                </div>
+            </div>>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
