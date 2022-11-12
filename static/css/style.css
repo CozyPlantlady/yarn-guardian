@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Titillium+Web&display=swap');
+
+body {
+    font-family: 'Titillum Web', sans-serif;
+}
+
+.special-font {
+    font-family: 'Pacifico', sans-serif;
+}
 .welcome-container {
     height: 100vh;
 
@@ -8,6 +17,9 @@
 
 .welcome {
     background: #F3AC94;
+    border-radius: 10px;
+    border-style: double;
+    border-color: #776674;
 }
 
 .base-bg {
@@ -24,16 +36,21 @@
 
 }
 
+.extra-fluff {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
 .what-is-yarn-guardian {
     background: #E2D8EC;
 }
 
 .how-to-use {
     background: #F6D7C0;
+    
 }
 
 #F6D7C0
 #776674
 #F3AC94
 #E2D8EC
-

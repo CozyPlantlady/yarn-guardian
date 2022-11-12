@@ -2,49 +2,56 @@
 
 
 {% block content %}
+<!-- Welcome Page-->
     <div class="welcome-container base-bg ">
-        <div class="container text-center welcome">
+        <div class="container text-center extra-fluff welcome">
             <div class="row">
-                <div class="col-12 ">
-                        <h1>Yarn Guardian welcomes you!</h1>
+                <div class="col-12">
+                        <h1><span class="special-font">Yarn Guardian</span><br>welcomes you!</h1>
                 </div>
                 {% if user.is_authenticated %}
                 <div> You are logged in as {{ user.username}}</div>
             
                 {% else %}
+<!-- What is Yarn Guardian-->
                 <div>
-                    <div class="d-grid gap-2 col-3 mx-auto">
-                        <button type="button" class="btn btn-outline-warning btn-lg"><a class="text-decoration-none text-dark" href="{% url 'account_login' %}">Log In</a></button>
-                        <button type="button" class="btn btn-bd-primary"><a class="text-decoration-none text-dark"href="{% url 'account_signup' %}">Sign Up</a></button>
+                    <div class="d-grid gap-2 col-3 mx-auto extra-fluff">
+                        <p>Alredy part of the tribe? Log in here:</p>
+                        <button type="button" class="btn btn-warning btn-lg"><a class="text-decoration-none text-dark special-font" href="{% url 'account_login' %}">Log In</a></button>
+                        <p>Click here to make your account:</p>
+                        <button type="button" class="btn btn-light"><a class="text-decoration-none text-dark special-font"href="{% url 'account_signup' %}">Sign Up</a></button>
                     </div>
                 </div>
                 <div>
-                    <h5>Not sure yet? Scroll down to read more!</h5>
+                    <hp>Not sure yet? Scroll down to read more!</p>
+                        <p><i class="fa-solid fa-arrow-down  fa-2x"></i></p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid text-center base-bg what-is-yarn-guardian">
+    <div class="container-fluid text-center base-bg extra-fluff what-is-yarn-guardian">
         <div class="row">
             <div class="col-12">
-                <h4>What is Yarn Guardian?</h4>
+                <h3 class="extra-fluff special-font">What is Yarn Guardian?</h3>
             </div>
             <div>
                 <p>Yarn Guardian is a little helper, that helps you keep record of your yarns.</p>
             </div>
         </div>
     </div>
-    <div class="container-fluid text-center base-bg how-to-use">
+    <div class="container-fluid text-center base-bg extra-fluff how-to-use">
         <div class="row">
             <div class="col-12">
-                <h4>How to use it?</h4>
+                <h3 class="extra-fluff special-font">What can Yarn Guardian do?</h3>
             </div>
             <div>
-                <p><i class="fa-solid fa-plus"></i> You can log a yarn by giving it's name, producer, color and material <i class="fa-solid fa-plus"></i></p>
+                <p><i class="fa-solid fa-plus"></i> You can log a yarn and give it's name, producer, color and material <i class="fa-solid fa-plus"></i></p>
                 <p><i class="fa-solid fa-pen"></i> You can make notes too! <i class="fa-solid fa-pen"></i></p>
                 <p><i class="fa-solid fa-star"></i> You can tag yarn as a favorite to find it easier <i class="fa-solid fa-star"></i></p>
-                 <p><i class="fa-solid fa-frog"></i> If you ever have to undo a project you can tag yarn as frogged <i class="fa-solid fa-frog"></i></p>
-                <p></p>
+                <p><i class="fa-solid fa-frog"></i> If you ever have to undo a project you can tag yarn as frogged <i class="fa-solid fa-frog"></i></p>
+                <p class="extra-fluff special-font"> And that's not all!</p>
+                <p>You can start a new project and keep notes about that as well.<br>You can add an URL to another page to have quick access to a pattern,<br>and tag a yarn you want to use with it (currently only one yarn though).</p>
+                <i class="fa-solid fa-frog fa-2x "></i>
             </div>
         </div>
     </div>
