@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'cloudinary',
     'django_summernote',
     'crispy_forms',
@@ -63,7 +63,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -167,5 +167,3 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # Authenticated user referenced in other models
 # https://learndjango.com/tutorials/django-best-practices-referencing-user-model
 # AUTH_USER_MODEL = 'accounts.CustomUser'
-
-STATIC_ROOT = BASE_DIR / "staticfiles"
