@@ -64,10 +64,6 @@ class AddYarnForm(ModelForm):
 
 
 class AddProjectForm(ModelForm):
-    name = forms.TextInput()
-    body = forms.Textarea()
-    link = forms.URLField()
-    yarn = forms.TextInput()
 
     class Meta:
         model = Project
