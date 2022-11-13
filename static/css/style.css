@@ -20,7 +20,7 @@ footer {
 .welcome-container {
     height: 100vh;
 
-    background: src( static "css/background.jpg") no-repeat center center fixed;
+    background: url("/static/css/background.jpg") no-repeat center center fixed;
 
     background-attachment: local;
 }
@@ -52,7 +52,6 @@ footer {
 }
 
 --- Colors --- 
-
 .what-is-yarn-guardian {
     background: #E2D8EC;
 }
@@ -80,9 +79,3 @@ footer {
 .trash-red {
     color: #CA3037;
 }
-
-
-#F6D7C0
-#776674
-#F3AC94
-#E2D8EC
