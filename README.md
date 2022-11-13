@@ -1,9 +1,9 @@
 # Yarn Guardian
 
-Yarn Guardian is a little helper app to keep your yarns, hooks and needles in order. Perfect for crafters!
+Yarn Guardian is a little helper app to keep your yarns and projects in order. Perfect for crafters!
 
 ## Strategy
-User can use this app to write upp information of all the yarns and other supplies they own. They can search uploaded information to see what they already own.
+User can use this app to write up information of all the yarns they own. They can search uploaded information to see what they already own.
 
 
 ## Scope
@@ -19,12 +19,11 @@ User can use this app to write upp information of all the yarns and other suppli
 - [As a User I can edit a project so that I can keep it up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/23)
 - [As a user I can add notes about the yarn so that I remember important things about it](https://github.com/CozyPlantlady/yarn-guardian/issues/57)
 - [As a User I can delete a project so that information is up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/32)
-- Mark project as finished
-- See finished projects
-- Mark favorite yarns with a star
-- Mark yarns that has been frogged (used, but unraveled and ready to be used again)
-- See how much of yarn has been used
-- See how much yarn is logged (and ready to be used)
+- [As a user I can mark project as finished so that I can keep information up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/25)
+- [As a user I can see all my finished projects so that I can see what I have done](https://github.com/CozyPlantlady/yarn-guardian/issues/26)
+- [As a User I can tag yarn as a favorite so that I can find it easier](https://github.com/CozyPlantlady/yarn-guardian/issues/54)
+- [As a User I can tag yarn as frogged so that I know it has been used before](https://github.com/CozyPlantlady/yarn-guardian/issues/55)
+
 
 ### Used Installments:
 Django and Gunicorn
@@ -60,7 +59,7 @@ pip3 install django-crispy-forms
 
 ### Data Structure
 
-![](doc/readme-images/drawSQL-table.png "")
+![](doc/readme-images/readme-Drawsql.png "")
 
 ## Skeleton:
 
@@ -96,15 +95,51 @@ pip3 install django-crispy-forms
 ## Surface:
 
 ### Colors: 
-
+![](doc/readme-images/readme-color-palette.png "")
+Hex color codes: lilac #e2d8ec, peach #f6d7c0, orange #f3ac94, dark purple #776674 and Bootstrap warning yellow #f0ad4e.
 ### Fonts: 
-
-### Favicon
-
-
-
+![](doc/readme-images/readme-font-pacifico.png "")
+![](doc/readme-images/readme-font-titillium-web.png "")
 
 ## TESTING
+
+### User Story epics:
+Click the header to see related User Stories in GitHub.
+
+
+[As a User I can login to my account so that I can use the app](https://github.com/CozyPlantlady/yarn-guardian/issues/4)
+
+Use can create an account. They can create one by only giving their preferred username and password. After that they can log in to the account. When User arrives to the web page for the first time they see a sign that Welcomes them. Then They are asked if they want to log in, or if they wan to create an account. If they want to know more they can scroll down the page. An arrow is pointing down. If User scrolls down they get an explanation what the app is and what it does, so that they know what to expect.
+
+
+[As a user I can look my stash board so that I know what items I have](https://github.com/CozyPlantlady/yarn-guardian/issues/2)
+
+Once User is logged in they are back in the index page. There they can see the option of either go to yarn stash page or to project page. They can choose these options any time from the navigation bar as well. Once User has arrived to Stash, they can see right away what yarns they have. If They don't have any yarns in stash then a text suggest them to add the first one by clicking New Yarn-button. 
+User can add unlimited amount of yarns. Yarns show up in rows. On mobile screen there is only one yarn at a time and user can scroll down. On tablets there are 3 and larger screens have 4 on a row. User can organise yarns by tagging some of them as favorite: those will show up first in line.
+
+[As a user I can see the different qualities of yarns when I search for them so that I know what to choose](https://github.com/CozyPlantlady/yarn-guardian/issues/6)
+
+Unfortunately this feature is not fully developed. However user can tag their yarn with different materials and colors, and hopefully I can add a search feature in the future. For now all the different qualities can be seen in a yarn card under yarns name, so it's quite easy to see what kind of yarn it is.
+
+- [As a User I can add new items so that I can keep stash up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/9)
+
+User can add a new yarn when they are in Stash page, by clicking New Yarn-button. This brings them to Add Yarn form. User has a lot of options what they want to write about their yarn, And only yarn name and producer are needed to fill to send the form. In the form user can tag yarn as favorite or frogged (or both). They can write notes about the yarn. They can add information about the color: Closest color is for future searc-engine so that it can search yarn color by the group. Color name is the official name producer has given it and same goes with color code. These are useful when trying to find an older yarn that might not match any new releses. Then User can write how much yarn they have. This is useful and can (and should) be updated). Yarn thickness (also referred as weight) tells how thin or thick the yarn is. Lastly user can choose materials. The form says that there is limit of 3, but thats not true: field has actually character limit of 100.
+
+
+- [As a user I can edit item information so that I can keep it up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/20)
+
+User can edit a yarn information by clicking a pen icon on that yarns card on Stash page. This sends user to a related form, that looks exactly like the form where they created the yarn. All the options are the same, and everything can be edited. If user wants to change yarn name or color that is ok too! User can keep adding notes about the yarn as well.
+
+- [As a user I can delete an item so that I can keep my stash up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/21)
+- [As a User I can edit an item that has been used up so that information is up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/50)
+- [As a User I can create a new project so that I can plan which yarns to use](https://github.com/CozyPlantlady/yarn-guardian/issues/22)
+- [As a User I can edit a project so that I can keep it up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/23)
+- [As a user I can add notes about the yarn so that I remember important things about it](https://github.com/CozyPlantlady/yarn-guardian/issues/57)
+- [As a User I can delete a project so that information is up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/32)
+- [As a user I can mark project as finished so that I can keep information up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/25)
+- [As a user I can see all my finished projects so that I can see what I have done](https://github.com/CozyPlantlady/yarn-guardian/issues/26)
+- [As a User I can tag yarn as a favorite so that I can find it easier](https://github.com/CozyPlantlady/yarn-guardian/issues/54)
+- [As a User I can tag yarn as frogged so that I know it has been used before](https://github.com/CozyPlantlady/yarn-guardian/issues/55)
 
 ### User Stories:
 https://github.com/users/CozyPlantlady/projects/5
