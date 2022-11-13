@@ -145,7 +145,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'workspace/yarn-guardian/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -167,3 +167,5 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # Authenticated user referenced in other models
 # https://learndjango.com/tutorials/django-best-practices-referencing-user-model
 # AUTH_USER_MODEL = 'accounts.CustomUser'
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
