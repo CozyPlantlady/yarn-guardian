@@ -51,12 +51,18 @@ footer {
     padding-bottom: 2rem;
 }
 
+--- Colors --- 
+
 .what-is-yarn-guardian {
     background: #E2D8EC;
 }
 
 .peach-bg {
     background: #F6D7C0;
+}
+
+.note-red-bg {
+    background-color: #F3AC94;
 }
 
 .frog-color {
