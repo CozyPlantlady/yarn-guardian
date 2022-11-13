@@ -1,21 +1,25 @@
 {% extends "base.html" %}
-
 {% load crispy_forms_tags %}
 
 {% block content %}
-
-{% if user.is_authenticated %}
-    <div>
-        <h1>Add a new Project:</h1>
-        <form method="POST" action="{% url 'add_project' %}" enctype="multipart/form-data">
-            {% csrf_token %}
-        {{ form | crispy }}
-        <button>Submit</button>
-        </form>
-
+<div class="container-fluid peach-bg">
+    {% if user.is_authenticated %}
+    <div class="container">
+        <h1 class="special-font extra-fluff text-center">Add a new project:</h1>
+        <div class="row">
+            <div class="col-10">
+                <form method="POST" action="{% url 'add_project' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-center extra-fluff ">
+                    <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
-{% else %}
-<p> Please login to start using Yarn Guardian!</p>
-{% endif %}
-
+    {% else %}
+    <p> Please login to start using Yarn Guardian!</p>
+    {% endif %}
+</div>
 {% endblock %}
