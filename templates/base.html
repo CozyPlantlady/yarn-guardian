@@ -13,15 +13,18 @@
 </head>
 
 <body>
-    <!--Navbar starts-->
+<!--Navbar starts-->
     {% if user.is_authenticated %}
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #E2D8EC;">
-        
-            <div class="row justify-content-between">
-                <div class="col">
-                    <a class="navbar-brand special-font" href="{% url 'home' %}">Yarn Guardian</a>
+    <div class=" container-fluid sticky-top" style="background-color: #E2D8EC;">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="row justify-content-end">
+                <div class="col-md-auto">
                 </div>
-                <div class="col">
+                <div class="col-5">
+                    <a class="navbar-brand special-font" href="{% url 'home' %}"><h2>Yarn Guardian</h2></a>
+                </div>
+                
+                <div class="col-5">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -35,22 +38,22 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     {% endif %}
-    <!--Navbar ends-->
+<!--Navbar ends-->
 
     <div >
-    <!--Block-->
+<!--Block-->
     <main>
     {% block content %}
-    <!-- Put Content Here -->
+<!-- Put Content Here -->
     {% endblock content %}
-
-    </div>
     </main>
+    </div>
+   
 
-    <!-- Footer -->
+<!-- Footer -->
     <footer>
         <div class="container mx-auto extra-fluff text-center">
             <div class="row">
