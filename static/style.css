@@ -18,6 +18,7 @@ footer {
 .special-font {
     font-family: 'Pacifico', sans-serif;
 }
+
 .welcome-container {
     height: 100vh;
 
@@ -27,7 +28,7 @@ footer {
 }
 
 .welcome {
-    background: #F3AC94;
+    background: #F6D7C0;
     border-radius: 10px;
     border-style: double;
     border-color: #776674;

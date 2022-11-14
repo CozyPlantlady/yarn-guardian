@@ -42,7 +42,7 @@
                             <div class="col-12 extra-fluff">
                                 <p class="card-text">
                                     <button class="btn btn-light btn-outline-secondary">
-                                        <a class="text-decoration-none text-dark" href="{{ project.link }}" target="_blank">Project link <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a class="text-decoration-none text-dark" href="{{ project.link }}" aria-label="Open page linked to your project" target="_blank">Project link <i class="fa-solid fa-arrow-right"></i></a>
                                     </button>
                                 </p>
                             </div>
@@ -102,9 +102,7 @@
                 {% endfor %}
             </div>
             <div class="d-grid col-3 mx-auto extra-fluff">
-                <button class="btn btn-warning btn-outline-secondary btn-lg">
-                    <a class="text-decoration-none text-dark " href="/add_project">New Project <i class="fa-solid fa-plus"></i></a>
-                </button>
+                <a class="text-decoration-none text-dark btn btn-warning btn-outline-secondary btn-lg" href="/add_project">New Project <i class="fa-solid fa-plus"></i></a>
             </div>
         </div>
     </div>

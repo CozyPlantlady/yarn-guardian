@@ -10,27 +10,26 @@
                         <h1><span class="special-font">Yarn Guardian</span><br>welcomes you!</h1>
                 </div>
                 {% if user.is_authenticated %}
-                <div class="col-12"> You are logged in as <span class="special-font">{{ user.username}}</span></div>
+                <div class="col-12"> You are logged in as 
+                    <span class="special-font">{{ user.username}}</span>
+                </div>
                 <div class="container extra-fluff">
                     <div class="row justify-content-center">
                         <h3 class="col-12 extra-fluff special-font">Where to start?</h3>
+                    </div>
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-6">
                             <h4>Add a yarn to your stash here:  
-                                <button class="btn btn-warning">
-                                    <a class="nav-item nav-link" href="{% url 'get_stash' %}">
-                                        Yarns
-                                    </a>
-                                </button>
+                                <a class="nav-item nav-link btn btn-warning" href="{% url 'get_stash' %}">
+                                    Yarns
+                                </a>
                             </h4>
                         </div>
                         <div class="col-12 col-md-6">
                             <h4> Start a New project here: 
-                                <button class="btn btn-warning">
-                                    <a class="nav-item nav-link" href="{% url 'get_projects' %}">
-                                        Projects
-                                    </a>
-                                </button>
+                                <a class="nav-item nav-link btn btn-warning" href="{% url 'get_projects' %}">
+                                    Projects
+                                </a>
                             </h4>
                         </div>
                     </div>
@@ -43,12 +42,12 @@
                         <p>Alredy part of the tribe? Log in here:</p>
                         <button type="button" class="btn btn-warning btn-lg"><a class="text-decoration-none text-dark special-font" href="{% url 'account_login' %}">Log In</a></button>
                         <p>Click here to make your account:</p>
-                        <button type="button" class="btn btn-light"><a class="text-decoration-none text-dark special-font"href="{% url 'account_signup' %}">Sign Up</a></button>
+                        <button type="button" class="btn btn-light"><a class="text-decoration-none text-dark special-font" href="{% url 'account_signup' %}">Sign Up</a></button>
                     </div>
                 </div>
                 <div>
-                    <hp>Not sure yet? Scroll down to read more!</p>
-                        <p><i class="fa-solid fa-arrow-down  fa-2x"></i></p>
+                    <p>Not sure yet? Scroll down to read more!</p>
+                    <p><i class="fa-solid fa-arrow-down  fa-2x"></i></p>
                 </div>
             </div>
         </div>
@@ -76,9 +75,7 @@
                 <p class="extra-fluff special-font"> And that's not all!</p>
                 <p>You can start a new project and keep notes about that as well.<br>You can add an URL to another page to have quick access to a pattern,<br>and tag a yarn you want to use with it (currently only one yarn though).</p>
                 <i class="fa-solid fa-frog fa-2x "></i>
-            </div>
-        </div>
-    </div>
+
                 {% endif %}
             </div>
         </div>

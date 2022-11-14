@@ -1,15 +1,16 @@
+<!DOCTYPE html>
 {% load static %}
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Yarn Guardian</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" 
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css"> 
-    <title>Yarn Guardian</title>
+    
 </head>
 
 <body>
@@ -33,7 +34,7 @@
                             <a class="nav-item nav-link" href="{% url 'get_stash' %}">Yarns</a>
                             <a class="nav-item nav-link" href="{% url 'get_projects' %}">Projects</a>
                             <a class="nav-item nav-link" href="{% url 'user_page' %}">{{ user.username }}</a>
-                            <button class="btn btn-warning"><a class="text-decoration-none text-dark" href="{% url 'account_logout' %}">Log Out</a></button>
+                            <a class="text-decoration-none text-dark btn btn-warning btn-outline-secondary btn-lg" href="{% url 'account_logout' %}">LogOut</a>
                         </div>
                     </div>
                 </div>
@@ -42,14 +43,11 @@
     </div>
     {% endif %}
 <!--Navbar ends-->
-
-    <div >
+    <div>
 <!--Block-->
-    <main>
     {% block content %}
 <!-- Put Content Here -->
     {% endblock content %}
-    </main>
     </div>
    
 
