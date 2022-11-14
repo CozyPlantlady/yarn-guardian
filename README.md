@@ -341,6 +341,8 @@ CSS code checked and passed.
 HTML code tested page by page manually, since website is behing user validation.
 Found a problem that I have been using buttons and links together, and fixed all of those. After that code was validated.
 
+#### Testing with Lighthouse
+
 
 
 ## DEPLOYMENT
