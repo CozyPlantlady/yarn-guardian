@@ -105,6 +105,75 @@ Hex color codes: lilac #e2d8ec, peach #f6d7c0, orange #f3ac94, dark purple #7766
 ![](doc/readme-images/readme-font-pacifico.png "")
 ![](doc/readme-images/readme-font-titillium-web.png "")
 
+### from base.html
+
+Navigation
+
+![](doc/readme-images/readme-screenshot-navbar.png "")
+
+Footer
+
+![](doc/readme-images/readme-screenshot-footer.png "")
+
+### Mobile
+
+Before login
+
+![](doc/readme-images/readme-screenshot-welcome.png "")
+![](doc/readme-images/readme-screenshot-welcome2.png "")
+
+After loggin in
+
+![](doc/readme-images/readme-screenshot-welcome3.png "")
+
+Stash board before any yarns are added, and after one yarn is added.
+
+![](doc/readme-images/readme-screenshot-stash.png "")
+![](doc/readme-images/readme-screenshot-stash1.png "")
+
+Stash board when user has clicked to see notes about yarn and modal pops up.
+
+![](doc/readme-images/readme-screenshot-stash2.png "")
+
+Project board before any projects are added, and after two projects have been added.
+
+![](doc/readme-images/readme-screenshot-projects.png "")
+![](doc/readme-images/readme-screenshot-projects1.png "")
+
+Modal pops up if user clicks to see the notes.
+
+![](doc/readme-images/readme-screenshot-projects2.png "")
+
+ **ADD YARN** Form that user fills to add/edit yarn. The only difference being the title.
+
+![](doc/readme-images/readme-screenshot-yarnform.png "")
+![](doc/readme-images/readme-screenshot-yarnform2.png "")
+
+**ADD PROJECT** Form that user can fill to add/edit a project.
+
+![](doc/readme-images/readme-screenshot-projectform.png "")
+
+Sign Up, Login, Log out
+
+![](doc/readme-images/readme-screenshot-signup.png "")
+![](doc/readme-images/readme-screenshot-login.png "")
+![](doc/readme-images/readme-screenshot-logout.png "")
+
+
+### Tablet
+Here you can see the main pages as viewed on tablet
+
+![](doc/readme-images/readme-screenshot-tablet1.png "")
+![](doc/readme-images/readme-screenshot-tablet2.png "")
+![](doc/readme-images/readme-screenshot-tablet3.png "")
+![](doc/readme-images/readme-screenshot-tablet4.png "")
+
+### Laptop
+Here you can see how Yarns and Projects look like on wider screens
+
+![](doc/readme-images/readme-screenshot-laptop1.png "")
+![](doc/readme-images/readme-screenshot-laptop2.png "")
+![](doc/readme-images/readme-screenshot-laptop3.png "")
 ## TESTING
 
 ### User Story epics:
@@ -229,6 +298,23 @@ This tiny app could be made so much bigger. It could be social platform where pe
 I really love this project, and want to either keep going with it or redo it in the future.
 
 ### Testing with code validators
+
+#### Python -- PEP8
+
+PEP8 was used throughout development to keep the code nice and clean.
+Only problems that show up are in **setting.py** and are *line too long* warnings. I left these untouched.
+
+
+#### JavaScript
+
+The only JavaScript code that was used in this project is a snip taken from Bootstraps page. I count this as already validated and hence it's not tested further.
+
+#### CSS -- W3C CSS Validation Service
+
+CSS code checked and passed.
+
+#### HTML -- W3C Markup Validation Service
+
 
 
 ## DEPLOYMENT
