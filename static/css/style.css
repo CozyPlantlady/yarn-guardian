@@ -20,7 +20,7 @@ footer {
 .welcome-container {
     height: 100vh;
 
-    background: url("/static/css/background.jpg") no-repeat center center fixed;
+    background: url("background.jpg") no-repeat center center fixed;
 
     background-attachment: local;
 }
