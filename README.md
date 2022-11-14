@@ -1,3 +1,59 @@
+- [Yarn Guardian](#yarn-guardian)
+  * [Strategy](#strategy)
+  * [Scope](#scope)
+    + [User Stories:](#user-stories-)
+    + [Used Installments:](#used-installments-)
+  * [Structure](#structure)
+    + [Site Structure](#site-structure)
+    + [Data Structure](#data-structure)
+  * [Skeleton:](#skeleton-)
+    + [Mobile](#mobile)
+    + [Tablet](#tablet)
+    + [Laptop](#laptop)
+  * [Surface:](#surface-)
+    + [Colors:](#colors-)
+    + [Fonts:](#fonts-)
+    + [from base.html](#from-basehtml)
+    + [Mobile](#mobile-1)
+    + [Tablet](#tablet-1)
+    + [Laptop](#laptop-1)
+  * [TESTING](#testing)
+    + [User Story epics:](#user-story-epics-)
+      - [[As a User I can login to my account so that I can use the app](https://github.com/CozyPlantlady/yarn-guardian/issues/4)](#-as-a-user-i-can-login-to-my-account-so-that-i-can-use-the-app--https---githubcom-cozyplantlady-yarn-guardian-issues-4-)
+      - [[As a user I can look my stash board so that I know what items I have](https://github.com/CozyPlantlady/yarn-guardian/issues/2)](#-as-a-user-i-can-look-my-stash-board-so-that-i-know-what-items-i-have--https---githubcom-cozyplantlady-yarn-guardian-issues-2-)
+      - [[As a user I can see the different qualities of yarns when I search for them so that I know what to choose](https://github.com/CozyPlantlady/yarn-guardian/issues/6)](#-as-a-user-i-can-see-the-different-qualities-of-yarns-when-i-search-for-them-so-that-i-know-what-to-choose--https---githubcom-cozyplantlady-yarn-guardian-issues-6-)
+      - [[As a User I can add new items so that I can keep stash up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/9)](#-as-a-user-i-can-add-new-items-so-that-i-can-keep-stash-up-to-date--https---githubcom-cozyplantlady-yarn-guardian-issues-9-)
+      - [[As a user I can edit item information so that I can keep it up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/20)](#-as-a-user-i-can-edit-item-information-so-that-i-can-keep-it-up-to-date--https---githubcom-cozyplantlady-yarn-guardian-issues-20-)
+      - [[As a User I can tag yarn as a favorite so that I can find it easier](https://github.com/CozyPlantlady/yarn-guardian/issues/54)](#-as-a-user-i-can-tag-yarn-as-a-favorite-so-that-i-can-find-it-easier--https---githubcom-cozyplantlady-yarn-guardian-issues-54-)
+      - [[As a User I can tag yarn as frogged so that I know it has been used before](https://github.com/CozyPlantlady/yarn-guardian/issues/55)](#-as-a-user-i-can-tag-yarn-as-frogged-so-that-i-know-it-has-been-used-before--https---githubcom-cozyplantlady-yarn-guardian-issues-55-)
+      - [[As a user I can delete an item so that I can keep my stash up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/21)](#-as-a-user-i-can-delete-an-item-so-that-i-can-keep-my-stash-up-to-date--https---githubcom-cozyplantlady-yarn-guardian-issues-21-)
+      - [[As a User I can create a new project so that I can plan which yarns to use](https://github.com/CozyPlantlady/yarn-guardian/issues/22)](#-as-a-user-i-can-create-a-new-project-so-that-i-can-plan-which-yarns-to-use--https---githubcom-cozyplantlady-yarn-guardian-issues-22-)
+      - [[As a User I can edit a project so that I can keep it up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/23)](#-as-a-user-i-can-edit-a-project-so-that-i-can-keep-it-up-to-date--https---githubcom-cozyplantlady-yarn-guardian-issues-23-)
+      - [[As a user I can add notes about the yarn so that I remember important things about it](https://github.com/CozyPlantlady/yarn-guardian/issues/57)](#-as-a-user-i-can-add-notes-about-the-yarn-so-that-i-remember-important-things-about-it--https---githubcom-cozyplantlady-yarn-guardian-issues-57-)
+      - [[As a User I can delete a project so that information is up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/32)](#-as-a-user-i-can-delete-a-project-so-that-information-is-up-to-date--https---githubcom-cozyplantlady-yarn-guardian-issues-32-)
+      - [[As a user I can mark project as finished so that I can keep information up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/25)](#-as-a-user-i-can-mark-project-as-finished-so-that-i-can-keep-information-up-to-date--https---githubcom-cozyplantlady-yarn-guardian-issues-25-)
+      - [[As a user I can see all my finished projects so that I can see what I have done](https://github.com/CozyPlantlady/yarn-guardian/issues/26)](#-as-a-user-i-can-see-all-my-finished-projects-so-that-i-can-see-what-i-have-done--https---githubcom-cozyplantlady-yarn-guardian-issues-26-)
+    + [Automated testing test_forms.py:](#automated-testing-test-formspy-)
+    + [Automated testing test_views.py:](#automated-testing-test-viewspy-)
+    + [Testing with code validators](#testing-with-code-validators)
+      - [Python -- PEP8](#python----pep8)
+      - [JavaScript](#javascript)
+      - [CSS -- W3C CSS Validation Service](#css----w3c-css-validation-service)
+      - [HTML -- W3C Markup Validation Service](#html----w3c-markup-validation-service)
+      - [Testing with Lighthouse](#testing-with-lighthouse)
+    + [Bugs and other issues:](#bugs-and-other-issues-)
+    + [Possible features to add](#possible-features-to-add)
+  * [DEPLOYMENT](#deployment)
+    + [Before deploying](#before-deploying)
+    + [GitHub](#github)
+    + [Heroku](#heroku)
+  * [CREDITS](#credits)
+    + [Mentor:](#mentor-)
+  * [CODE CREDITS](#code-credits)
+  * [Thank you for reading!](#thank-you-for-reading-)
+
+
+
 # Yarn Guardian
 
 Yarn Guardian is a little helper app to keep your yarns and projects in order. Perfect for crafters!
@@ -415,3 +471,5 @@ class MyForm(forms.Form):
 ```
 
 ## Thank you for reading!
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
