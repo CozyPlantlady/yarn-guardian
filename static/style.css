@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Titillium+Web&display=swap');
 
+
+
 body {
     font-family: 'Titillum Web', sans-serif;
 }
@@ -7,7 +9,6 @@ body {
 footer {
     background-color: #776674;
     color:#E2D8EC;
-
 }
 
 #my-stash {
@@ -37,13 +38,10 @@ footer {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     position: relative;
-
 }
 
 .extra-fluff {
@@ -51,7 +49,6 @@ footer {
     padding-bottom: 2rem;
 }
 
---- Colors --- 
 .what-is-yarn-guardian {
     background: #E2D8EC;
 }

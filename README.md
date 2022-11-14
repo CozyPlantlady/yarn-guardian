@@ -178,16 +178,21 @@ All the projects stay in the project page as long as user doesn't delete them. T
 ### Automated testing test_forms.py:
 Using **Djangos** build-in **TestCase** for automated testing.
 **AddYarnForm** is tested for required fields *producer* and *name*. Test shows that form is not valid if these fields are not filled.
-**AddYarnForms** fields are also tested that they match with Yarn modules fields.cThese tests pass without problem.
+**AddYarnForms** fields are also tested that they match with Yarn modules fields. These tests pass without problem.
+
+**ProjectForm** is tested similarly for required name and correct fields. These tests pass.
 
 ### Automated testing test_views.py:
 Goal is to test that every html-page opens correctly, but run into trouble when view wanted a validated user. 
 
+```
 TypeError: 'AnonymousUser' object is not iterable
-
+```
 Currently working tests:
 Home page loads correctly.
 User Page loads correctly.
+
+Unfortunately I couldn't figure this one out and these views are not tested further. Removed unused test snippets.
 
 
 
