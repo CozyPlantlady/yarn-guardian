@@ -5,6 +5,8 @@
 <head>
     <title>Yarn Guardian</title>
     <meta charset="UTF-8">
+    <meta name="description" content="Record keeper for yarns and projects">
+    <meta name="keywords" content="yarn, crafts, knitting, crocheting, project, frogging, notes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" 
@@ -31,10 +33,10 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-item nav-link" href="{% url 'get_stash' %}">Yarns</a>
-                            <a class="nav-item nav-link" href="{% url 'get_projects' %}">Projects</a>
-                            <a class="nav-item nav-link" href="{% url 'user_page' %}">{{ user.username }}</a>
-                            <a class="text-decoration-none text-dark btn btn-warning btn-outline-secondary btn-lg" href="{% url 'account_logout' %}">LogOut</a>
+                            <a class="nav-item nav-link" aria-label="Yarn stash" href="{% url 'get_stash' %}">Yarns</a>
+                            <a class="nav-item nav-link" aria-label="Project page" href="{% url 'get_projects' %}">Projects</a>
+                            <a class="nav-item nav-link" aria-label="Your userpage" href="{% url 'user_page' %}">{{ user.username }}</a>
+                            <a class="text-decoration-none text-dark btn btn-warning btn-outline-secondary btn-lg" aria-label="Log out from app" href="{% url 'account_logout' %}">LogOut</a>
                         </div>
                     </div>
                 </div>
