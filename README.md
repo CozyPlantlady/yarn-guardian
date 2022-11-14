@@ -190,8 +190,6 @@ The main page where user arrives after log in.
 
 ![](doc/readme-images/readme-screenshot-laptop3.png "")
 
-### And then the problem
-Even after a lot of trial and error I have not succeeded at getting the custom CSS to show after everything is deployed to Heroku. Because of this only Bootstrap is showing. I was thinking if I should remove all my custom css because of and replace it with inline styling, but decided not to. The code is there and it works in development, as the screenshots can show. One day I'll figure this puzzle out as well. This is purely visual problem and doesn't affect the logic.
 
 ## TESTING
 
@@ -284,9 +282,44 @@ User Page loads correctly.
 
 Unfortunately I couldn't figure this one out and these views are not tested further. Removed unused test snippets.
 
-### Automated testing test_models.py
+### Testing with code validators
+
+#### Python -- PEP8
+
+PEP8 was used throughout development to keep the code nice and clean.
+Only problems that show up are in **setting.py** and are *line too long* warnings. I left these untouched.
 
 
+#### JavaScript
+
+The only JavaScript code that was used in this project is a snip taken from Bootstraps page. I count this as already validated and hence it's not tested further.
+
+#### CSS -- W3C CSS Validation Service
+
+CSS code checked and passed.
+
+#### HTML -- W3C Markup Validation Service
+
+HTML code tested page by page manually, since the final page is behind user validation.
+Found a problem that I have been using buttons and links together, and fixed all of those. After that code was validated.
+
+#### Testing with Lighthouse
+
+Currently receiving flags on lighthouse about SameSite=Lax errors. Unfortunately I don't know enought to do anything about this.
+
+Lighthouse testing pointed out that headers used were not in right order, as in h3 came without there being h2. This has been changed.
+
+I also got a browser error that background image is not loading. Changed this to URL.
+
+Lighthouse was not happy with Bootstrap libraries, but that can't be helped.
+
+![](doc/readme-images/readme-lighthouse0.png "")
+![](doc/readme-images/readme-lighthouse1.png "")
+![](doc/readme-images/readme-lighthouse2.png "")
+![](doc/readme-images/readme-lighthouse3.png "")
+![](doc/readme-images/readme-lighthouse4.png "")
+
+Important to remember later: Got some note about colors being too close to each other. Really need to keep this in mind next time designing something.
 
 ### Bugs and other issues:
 - [Make stash visible only if user in logged in](https://github.com/CozyPlantlady/yarn-guardian/issues/67)
@@ -319,29 +352,6 @@ After editing/adding/deletion there should came note saying that it was done suc
 This tiny app could be made so much bigger. It could be social platform where people can share their current projects. It would highly benefit from letting user download pictures, both of their yarns and their projects. Possibility to have a codeword or symbol by the yarn information, so that user can use that as a key when organising their stash at home.
 
 I really love this project, and want to either keep going with it or redo it in the future.
-
-### Testing with code validators
-
-#### Python -- PEP8
-
-PEP8 was used throughout development to keep the code nice and clean.
-Only problems that show up are in **setting.py** and are *line too long* warnings. I left these untouched.
-
-
-#### JavaScript
-
-The only JavaScript code that was used in this project is a snip taken from Bootstraps page. I count this as already validated and hence it's not tested further.
-
-#### CSS -- W3C CSS Validation Service
-
-CSS code checked and passed.
-
-#### HTML -- W3C Markup Validation Service
-
-HTML code tested page by page manually, since website is behing user validation.
-Found a problem that I have been using buttons and links together, and fixed all of those. After that code was validated.
-
-#### Testing with Lighthouse
 
 
 
