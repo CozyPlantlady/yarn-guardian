@@ -22,7 +22,7 @@ footer {
 .welcome-container {
     height: 100vh;
 
-    background: url("background.jpg") no-repeat center center fixed;
+    background: href("https://res.cloudinary.com/a-fluff-of-cotton/image/upload/v1668203441/thread-gd3fcec166_1920_bdrig5.jpg") no-repeat center center fixed;
 
     background-attachment: local;
 }
