@@ -44,8 +44,3 @@ class TestViews(TestCase, LoginRequiredMixin):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'stash/user_page.html')
 
-#    def test_get_stash(self):
-#        response = self.client.get()
-#        response = self.client.get('/get_stash')
-#        self.assertEqual(response.status_code, 200)
-#        self.assertTemplateUsed(response, 'stash/stash_board.html')
