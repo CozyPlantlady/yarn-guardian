@@ -41,21 +41,22 @@
                         <div class="row">
                             <div class="col-12 extra-fluff">
                                 <p class="card-text">
-                                    <button class="btn btn-light btn-outline-secondary">
-                                        <a class="text-decoration-none text-dark" href="{{ project.link }}" aria-label="Open page linked to your project" target="_blank">Project link <i class="fa-solid fa-arrow-right"></i></a>
-                                    </button>
+                                    <a class="text-decoration-none text-dark btn btn-light btn-outline-secondary" href="{{ project.link }}" aria-label="Open page linked to your project" target="_blank">Project link 
+                                        <i class="fa-solid fa-arrow-right">
+                                        </i>
+                                    </a>
                                 </p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <a href="/delete_project/{{ project.id }}">
-                                    <button> <i class="fa-solid fa-trash"></i></button>
+                                    <i class="fa-solid fa-trash trash-red"></i>
                                 </a>
                             </div>
                             <div class="col">
                                 <a href="/edit_project/{{ project.id }}">
-                                    <i class="fa-solid fa-pen"></i>
+                                    <i class="fa-solid fa-pen note-red"></i>
                                 </a>
                             </div>
                         

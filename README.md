@@ -56,6 +56,8 @@ pip3 install django-crispy-forms
 ### Site Structure
 ![](doc/readme-images/site-structure.png "")
 
+User page is on the site, but doesn't have anything on it. 
+
 
 ### Data Structure
 
@@ -161,11 +163,21 @@ Sign Up, Login, Log out
 
 
 ### Tablet
-Here you can see the main pages as viewed on tablet
+Here you can see the main pages as viewed on tablet.
+First how it looks like before user has logged in
 
 ![](doc/readme-images/readme-screenshot-tablet1.png "")
+
+Then the view after user has logged in.
+
 ![](doc/readme-images/readme-screenshot-tablet2.png "")
+
+Yarn stash with several yarns added.
+
 ![](doc/readme-images/readme-screenshot-tablet3.png "")
+
+Project page
+
 ![](doc/readme-images/readme-screenshot-tablet4.png "")
 
 ### Laptop
@@ -173,7 +185,14 @@ Here you can see how Yarns and Projects look like on wider screens
 
 ![](doc/readme-images/readme-screenshot-laptop1.png "")
 ![](doc/readme-images/readme-screenshot-laptop2.png "")
+
+The main page where user arrives after log in.
+
 ![](doc/readme-images/readme-screenshot-laptop3.png "")
+
+### And then the problem
+Even after a lot of trial and error I have not succeeded at getting the custom CSS to show after everything is deployed to Heroku. Because of this only Bootstrap is showing. I was thinking if I should remove all my custom css because of and replace it with inline styling, but decided not to. The code is there and it works in development, as the screenshots can show. One day I'll figure this puzzle out as well. This is purely visual problem and doesn't affect the logic.
+
 ## TESTING
 
 ### User Story epics:
@@ -224,6 +243,8 @@ User has two options on how to handle their their yarn stash when they run out o
 
 Similarly with Yarn page, User is couched to go to Project page once they log in to their account. They can get there by clicking **Projects** tag in the navigation as well. Clicking the button sends them to My Projects-page. If they don't have any projects then the page informs them of that and tells them to add first project by clicking a **New Project**-button. This sends them to **Add Project**-page. Here user can give their project a name and write notes about it. They can also add a link to a pattern page if they wish to do so, and they can choose yarn to be used in this project. If they check the project as *finished* then that project card gets a check mark by the project name at the project board and sends the project to the end of the list.
 
+BUG ALERT! User can add also yarns that other people have logged. This needs some further testing and figuring out on my part.
+
 #### [As a User I can edit a project so that I can keep it up to date](https://github.com/CozyPlantlady/yarn-guardian/issues/23)
 
 User can click the pen icon on a project card to go back to the form and change any information as they wish. This is highly recommended, since user might want to keep adding notes as they go.
@@ -262,6 +283,8 @@ Home page loads correctly.
 User Page loads correctly.
 
 Unfortunately I couldn't figure this one out and these views are not tested further. Removed unused test snippets.
+
+### Automated testing test_models.py
 
 
 
@@ -314,6 +337,9 @@ The only JavaScript code that was used in this project is a snip taken from Boot
 CSS code checked and passed.
 
 #### HTML -- W3C Markup Validation Service
+
+HTML code tested page by page manually, since website is behing user validation.
+Found a problem that I have been using buttons and links together, and fixed all of those. After that code was validated.
 
 
 
